@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bissexto</title>
+    <link rel="stylesheet" href="css/ex2.css">
+
+    <script>
+        function bissexto() {
+            let ano_atual = parseInt(document.getElementById('ano_atual').value)
+            
+            if(ano_atual % 4 == 0)
+                document.write("O ano é bissexto!")
+
+            else
+                document.write("O ano não é bissexto.")
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
+        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
+    </header>
+    <H1>O ano é bissexto???</H1>
+
+    <input type="number" id="ano_atual" placeholder="Digite um ano">
+    <button onclick="bissexto()">Verificar</button>
+</body>
+</html>

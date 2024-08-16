@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gorjeta</title>
+    <link rel="stylesheet" href="css/ex4.css">
+</head>
+<body>
+    <script>
+        function calculargorjeta() {
+            
+            //variáveis:
+            
+            const total = parseInt(document.getElementById('total').value)
+
+            const satisfacao = parseInt(document.getElementById('satisfacao').value)
+
+            const x = satisfacao/100
+
+            //esta variavel x, é para "transformar" a satisfação em uma porcentagem
+            
+            if (satisfacao == 10){
+
+                let y = x*total
+                // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
+                let gorjeta = total + y
+                // é o total com a gorjeta, cuidado para não confundir.
+                document.getElementById("mensagem").innerHTML = "Pedimos desculpas pela sua experiência negativa :(, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";
+                }
+
+                // LEMBRE-SE O TOFIXED É UMA FORMA DE "PEGAR" CASAS DECIMAIS E MOSTRAR
+
+            else if (satisfacao == 15){
+
+                let y = x*total
+                // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
+                let gorjeta = total + y
+                // é o total com a gorjeta, cuidado para não confundir.
+                document.getElementById("mensagem").innerHTML = "Ficamos felizes com sua avaliação, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";
+                }
+
+            else if (satisfacao == 20){
+                
+                let y = x*total
+                // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
+                let gorjeta = total + y
+                // é o total com a gorjeta, cuidado para não confundir.
+                
+                document.getElementById("mensagem").innerHTML = "Ficamos felizes com sua avaliação, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";
+                }
+
+        }
+
+        
+        
+
+    </script>
+
+    <header>
+        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
+        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
+    </header>
+
+    <nav>
+
+    </nav>
+
+    <main>
+        <section>
+            <h1>Calculadora de Gorjeta</h1>
+            <article>
+                <p>Digite o valor de sua conta:</p>
+                <input type="number" id="total" placeholder="Valor total"/>
+            </article>
+            <article>
+                <p>Qual foi o grau de satisfação em nosso restalrante?("10" é que deixou a desejar, "15" é regular e "20" é perfeito!)</p>
+
+                <input type="number" id="satisfacao" placeholder="Qual foi o nível de satisfação?"/>
+                <select name="cars" id="cars">
+                    <option value="" disabled selected>Qual foi o nível de satisfação?</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
+
+                <!-- <input type="range" name="" id="satisfacao" min="0" max="20" step="10"> -->
+
+            </article>
+            <article>
+                <button onclick="calculargorjeta()">Calcular Gorjeta</button>
+            </article>
+            <p id="mensagem"></p>
+
+            
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+    
+
+</body>
+</html>

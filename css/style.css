@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+    padding: 0;
+    color: white;
+    background: rgb(255,181,0);
+    background: linear-gradient(0deg, rgba(255,181,0,1) 0%, rgba(207,147,0,1) 75%, rgba(0,0,0,1) 100%); 
+}
+
+a{
+    color: white;
+}
+/* 
+h1{
+    background-color: orange;
+    border: 1px solid red;
+} */
+
+h2{
+    margin-top: 50%;
+    background-color: rgb(17, 17, 17);
+    font-size: 18px;
+}
+/* 
+h3{
+    background-color: black;
+    border: 1px solid red;
+} */
+
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.botao_redirecionador{  
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 3%;
+}
+
+#adivinhacao{
+    background-image: url(../imagens/21125-forca-jogo-de-palavras-para-as-criancas-3468244872.jpg);
+    background-size: 300px 310px;
+}
+
+#bissexto{
+    background-image: url(../imagens/pngtree-calendar-and-clock-icon-png-image_8309253-3458236125.png);
+    background-size: 300px 300px;
+}
+
+#media{
+    background-image: url(../imagens/sua-escola-e-uma-empresa-3480221289.jpg);
+    background-size: 300px 300px;
+}
+
+#gorjeta{
+    background-image: url(../imagens/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill-1896071869.jpg);
+    background-size: 300px 300px;
+}
+
+#saudacao{
+    background-image: url(../imagens/saudacao_1-3195952736.jpg);
+    background-size: 300px 300px;
+}

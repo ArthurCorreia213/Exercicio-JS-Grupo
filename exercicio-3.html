@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Escolar</title>
+    <script>
+    function media_final() {
+        let nota1 = parseInt(document.getElementById('nota1').value)
+        let nota2 = parseInt(document.getElementById('nota2').value)
+        let nota3 = parseInt(document.getElementById('nota3').value)
+        let nota4 = parseInt(document.getElementById('nota4').value)
+
+        let media = (nota1 + nota2 + nota3 + nota4) / 4
+
+        if(media >= 7)
+            document.write("Aprovado!")
+
+        else if(media >= 5 && media < 7)
+            document.write("Recuperação")
+        
+        else
+            document.write("Reprovado.")
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
+        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
+    </header>
+    <H1>Nota Final</H1>
+    <input type="number" id="nota1" placeholder="Digite uma nota">
+    <input type="number" id="nota2" placeholder="Digite uma nota">
+    <input type="number" id="nota3" placeholder="Digite uma nota">
+    <input type="number" id="nota4" placeholder="Digite uma nota">
+    <button onclick="media_final()">Calcular</button>
+</body>
+</html>

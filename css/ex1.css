@@ -1,0 +1,77 @@
+body{
+    height: 95vh;
+    background-color: rgb(123, 35, 206);
+    color: #fff;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    }
+
+.container h1{
+    position: relative;
+    top: 0.3em;
+    font-size: 3em;
+}
+
+.container p{
+    color: black;
+    position: relative;
+    bottom: 3em;
+    z-index: 1;
+}
+
+.caixa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    background-color: #fff;
+    color: black;
+
+    height: 25em;
+    width: 60em;
+    border-radius: 2em;
+    border: 2px solid #000;
+}
+
+.container h2{
+    position: relative; 
+    bottom: 3em;
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub input{
+    width: 20em;
+    height: 1.5em;
+    border-radius: 2em;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+
+    position: relative;
+    bottom: 0.7em;
+}
+
+button{
+    width: 8em;
+    height: 2.3em;
+    font-size: 1.4em;
+}

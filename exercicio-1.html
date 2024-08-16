@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/ex1.css">
+
+    <script>
+        function adivinhacao(){
+        let random_number = Math.floor((Math.random() * 10) + 1)
+        let user_choise = document.getElementById("num_escolhido").value
+
+        document.getElementById("p").textContent += "O número escolhido foi " + random_number + ". ";
+        if(user_choise == random_number){
+            document.getElementById("p").textContent += "Parabéns, você acertou!";
+        }
+        else{
+            document.getElementById("p").textContent += "Tente novamente!";
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
+        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
+    </header>
+    <div class="container">
+        <h1>Será que você consegue advinhar?</h1>
+        <div class="caixa">
+            <h2>Digite um número de 1 a 10 para adivinhar o número secreto</h2>
+            <div class="sub">
+                <input type="number" id="num_escolhido" placeholder="Digite seu número">
+                <button onclick="adivinhacao()">Adivinhar</button>
+            </div>
+        </div>
+        <p id ="p"></p>
+    </div>
+</body>
+</html>
