@@ -22,9 +22,9 @@
             
             if (satisfacao == 10){
 
-                let y = x*total
+                const y = x*total
                 // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
-                let gorjeta = total + y
+                const gorjeta = total + y
                 // é o total com a gorjeta, cuidado para não confundir.
                 document.getElementById("mensagem").innerHTML = "Pedimos desculpas pela sua experiência negativa :(, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";
                 }
@@ -33,18 +33,18 @@
 
             else if (satisfacao == 15){
 
-                let y = x*total
+                const y = x*total
                 // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
-                let gorjeta = total + y
+                const gorjeta = total + y
                 // é o total com a gorjeta, cuidado para não confundir.
                 document.getElementById("mensagem").innerHTML = "Ficamos felizes com sua avaliação, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";
                 }
 
             else if (satisfacao == 20){
                 
-                let y = x*total
+                const y = x*total
                 // y é valor "individual" da gorjeta, em relção a porcentagem que o usuário colocou
-                let gorjeta = total + y
+                const gorjeta = total + y
                 // é o total com a gorjeta, cuidado para não confundir.
                 
                 document.getElementById("mensagem").innerHTML = "Ficamos felizes com sua avaliação, a gorjeta é " + y.toFixed(2) + " reais e ficando um total de " + gorjeta.toFixed(2) + " reais.";

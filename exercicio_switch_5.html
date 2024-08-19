@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function recomendarRoupa(){
+            let temperatura = parseFloat(document.getElementById("temperatura").value)
+            let recomendacao
+
+            switch(true){
+                case (temperatura < 15):
+                    recomendacao = "Casaco, Luvas"
+                    break
+                
+                case (temperatura >=15 && temperatura <= 25):
+                    recomendacao = "Jaqueta, Cachecol"
+                    break
+
+                case (temperatura > 25):
+                    recomendacao = "Camiseta, Chapéu"
+                    break
+
+                default:
+                    recomendacao = "Temperatura inválida"
+            }
+
+            document.write(recomendacao)
+        }
+    </script>
+</head>
+<body>
+    <!-- Crie uma função que recomenda roupas para um dia com base na temperatura:
+    Frio (abaixo de 15°C): Casaco, Luvas
+    Ameno (15°C a 25°C): Jaqueta, Cachecol
+    Quente (acima de 25°C): Camiseta, Chapéu -->
+
+    <input type="number" id="temperatura">
+    <button onclick="recomendarRoupa()">Recomendar</button>
+</body>
+</html>

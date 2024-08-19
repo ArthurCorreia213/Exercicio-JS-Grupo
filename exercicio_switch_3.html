@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function calcularNivel() {
+            let pontuacao = parseInt(document.getElementById("pontuacao").value);
+            let nivel;
+
+            switch (true) {
+                case (pontuacao >= 0 && pontuacao <= 199):
+                    nivel = "Iniciante";
+                    break;
+                case (pontuacao >= 200 && pontuacao <= 499):
+                    nivel = "Intermediário";
+                    break;
+                case (pontuacao >= 500 && pontuacao <= 999):
+                    nivel = "Avançado";
+                    break;
+                case (pontuacao >= 1000):
+                    nivel = "Mestre";
+                    break;
+                default:
+                    nivel = "Pontuação inválida";
+            }
+
+            document.getElementById("resultado").innerText = "Nível: " + nivel;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="pontuacao" name="pontuacao">
+    <button onclick="calcularNivel()">Calcular Nível</button>
+
+    <p id="resultado"></p>
+</body>
+</html>
