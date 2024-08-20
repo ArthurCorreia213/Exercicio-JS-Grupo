@@ -6,6 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <H1>Conversor de moeda</H1>
+
+    <label for="moeda">
+        <select name="" id="moeda">
+            <option value="1">Dolar</option>
+            <option value="2">Euro</option>
+            <option value="3">Libra Esterlina</option>
+        </select>
+
+        <input type="number" id="real" placeholder="Digite uma moeda">
+        <button onclick="conversor()">Converter</button>
+    </label>
+
+    <p id="resultado"></p>
+
+    <script>
+        function conversor(){
+            let real = parseFloat(document.getElementById("real").value);
+            let dolar = 5;
+            let euro = 5.5;
+            let libra = 6;
+
+            let opcao = parseInt(document.getElementById('moeda').value)
+            let resultado;
+
+            switch(opcao){
+                case 1:
+                    resultado = real / dolar;
+                    document.getElementById('resultado').innerText = `O valor convertido é de: $${resultado.toFixed(2)}`
+                    break
+                case 2:
+                    resultado = real / euro;
+                    document.getElementById('resultado').innerText = `O valor convertido é de: $${resultado.toFixed(2)}`
+                    break;
+                case 3: 
+                    resultado = real / libra;
+                    document.getElementById('resultado').innerText = `O valor convertido é de: $${resultado.toFixed(2)}`
+                    break;
+                
+                default:
+                    document.getElementById('resultado').innerText = 'Selecione uma moeda válida.'
+
+            }
+        }
+    </script>
 </body>
 </html>

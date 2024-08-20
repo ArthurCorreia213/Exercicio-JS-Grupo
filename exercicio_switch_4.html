@@ -6,12 +6,6 @@
     <title>Document</title>
 
     <script>
-
-        // Deve ter entre 8 e 16 caracteres
-        // Deve conter pelo menos uma letra maiúscula
-        // Deve conter pelo menos um número
-        // Deve conter pelo menos um caractere especial (@, #, $, %, &, *)
-
         function validarSenha(){
             let senha = String(document.getElementById("senha").value)
             let tamanho, maiuscula, numero, charEspecial
@@ -54,7 +48,10 @@
                     charEspecial = "Senha inválida. Sua senha deve possui ao menos um caractere especial"
             }
 
-            document.getElementById("resultado").innerText = senha + tamanho + maiuscula + numero + charEspecial ;
+            document.getElementById("resultado1").innerText = tamanho;
+            document.getElementById("resultado2").innerText = maiuscula;
+            document.getElementById("resultado3").innerText = numero;
+            document.getElementById("resultado3").innerText = charEspecial;
         }
     </script>
 </head>
@@ -63,5 +60,8 @@
     <input type="text" id="senha">
     <button onclick="validarSenha()">Validar</button> 
     <p id="resultado"></p>
+    <p id="resultado1"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
 </body>
 </html>
