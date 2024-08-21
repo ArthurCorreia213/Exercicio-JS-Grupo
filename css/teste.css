@@ -35,3 +35,8 @@ header{
     color: white;
     padding-left: 1%;
 }
+
+.container div :hover{
+  cursor: pointer;
+  color: rgb(255, 197, 109);
+}
