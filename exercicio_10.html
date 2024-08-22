@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let palavra = prompt("Digite uma palavra para ver se ela é um palíndromo: ")
+        let contrario = ""
+
+        for(let i = palavra.length - 1; i>= 0; i--){
+            contrario += palavra[i]
+        }
+
+        if(palavra == contrario){
+            document.write("Sua palavra é um palindromo!")
+        }
+        else{
+            document.write("Sua palavra não é um palíndromo")
+        }
+
+        document.write("Sua palavra escrita normalmente: ", palavra)
+        document.write("Sua palavra escrita ao contrário: ", contrario)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
