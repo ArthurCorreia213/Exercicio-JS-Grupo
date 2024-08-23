@@ -28,6 +28,8 @@ header{
 .box{
     display: flex;
     padding: 10px;
+    box-shadow: #20262e;
+    
 }
 
 .box a{
@@ -39,4 +41,74 @@ header{
 .container div :hover{
   cursor: pointer;
   color: rgb(255, 197, 109);
+}
+/* 
+Brilho daora: */
+a :hover{
+  filter: drop-shadow(0 0 15px rgba(255, 23, 23, 0.6)) 
+          drop-shadow(0 0 30px rgba(255, 208, 0, 0.6)) 
+          drop-shadow(0 0 45px rgba(109, 139, 0, 0.6));
+}
+
+/* 
+decorando footer */
+
+footer {
+  background-color: #20262e;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.github-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.footer-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-container p {
+  margin: 5px;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: rgb(255, 197, 109);
+  font-size: x-large;
+  transition: 0.5s ease-in;
+}
+/* 
+o transition é aquilo que faz umas espécide de animação, só não sei como faz ele reverso... */
+
+.footer-info{
+  padding-top: 1%;
+}
+.footer-info p {
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+      flex-direction: column;
+  }
 }
