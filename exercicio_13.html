@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // for(let i= 1; i<=5 ;i++){
+
+        //     let nome = prompt("Digite um nome: ")
+        //     let idade = parseInt(prompt("Digite sua idade: "))
+    
+        //     if(idade > idade_mais_velho){
+        //         idade_mais_velho = idade
+        //         nome_mais_velho = nome
+        //     }
+
+        //     if(i==5){
+        //         document.write(`A pessoa mais velha é ${nome_mais_velho}, com ${idade_mais_velho} anos de idade`)
+        //     }
+        // }
+
+        function maisVelho(){
+            let nome_mais_velho
+            let idade_mais_velho = 0 
+
+            const nome1 = document.getElementById("nome1")
+            const idade1 = parseInt(getElementById("idade1"))
+
+            const nome2 = document.getElementById("nome2")
+            const idade2 = parseInt(getElementById("idade2"))
+
+            const nome3 = document.getElementById("nome3")
+            const idade3 = parseInt(getElementById("idade3"))
+
+            const nome4 = document.getElementById("nome4")
+            const idade4 = parseInt(getElementById("idade4"))
+
+            const nome5 = document.getElementById("nome5")
+            const idade5 = parseInt(getElementById("idade5"))
+            }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Nome" id="nome1">
+    <input type="number" placeholder="Idade" id="idade1" style="width: 50px;">
+    <br>
+    <input type="text" placeholder="Nome" id="nome2">
+    <input type="number" placeholder="Idade" id="idade2" style="width: 50px;">
+    <br>
+    <input type="text" placeholder="Nome" id="nome3">
+    <input type="number" placeholder="Idade" id="idade3" style="width: 50px;">
+    <br>
+    <input type="text" placeholder="Nome" id="nome4">
+    <input type="number" placeholder="Idade" id="idade4" style="width: 50px;">
+    <br>
+    <input type="text" placeholder="Nome" id="nome5">
+    <input type="number" placeholder="Idade" id="idade5" style="width: 50px;">
+    <br>
+    <button onclick="maisVelho()">Verificar</button>
+</body>
+</html>

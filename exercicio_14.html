@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function parOuImpar(){
+            num = 0
+            do{
+                const num = parseInt(document.getElementById("num").value)
+                if(num % 2 == 0){
+                    document.getElementById("p").textContent =`O número ${num} é par`
+                }
+                else{
+                    document.getElementById("p").textContent =`O número ${num} é impar`
+                }
+            }while(num != 0)
+    }
+    </script>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Digite um número para ver sua tabuada">
+    <button id="btn" onclick="parOuImpar()">Calcular</button>
+    <p id="p"></p>
+</body>
+</html>

@@ -6,25 +6,38 @@
     <title>Document</title>
 
     <script>
-        let palavra = prompt("Digite uma palavra para ver se ela é um palíndromo: ")
-        let contrario = ""
+        function recomendarRoupa(){
+            let temperatura = parseFloat(document.getElementById("temperatura").value)
+            let recomendacao
 
-        for(let i = palavra.length - 1; i>= 0; i--){
-            contrario += palavra[i]
-        }
+            switch(true){
+                case (temperatura < 15):
+                    recomendacao = "Casaco, Luvas"
+                    break
+                
+                case (temperatura >=15 && temperatura <= 25):
+                    recomendacao = "Jaqueta, Cachecol"
+                    break
 
-        if(palavra == contrario){
-            document.write("Sua palavra é um palindromo!")
-        }
-        else{
-            document.write("Sua palavra não é um palíndromo")
-        }
+                case (temperatura > 25):
+                    recomendacao = "Camiseta, Chapéu"
+                    break
 
-        document.write("Sua palavra escrita normalmente: ", palavra)
-        document.write("Sua palavra escrita ao contrário: ", contrario)
+                default:
+                    recomendacao = "Temperatura inválida"
+            }
+
+            document.write(recomendacao)
+        }
     </script>
 </head>
 <body>
-    
+    <!-- Crie uma função que recomenda roupas para um dia com base na temperatura:
+    Frio (abaixo de 15°C): Casaco, Luvas
+    Ameno (15°C a 25°C): Jaqueta, Cachecol
+    Quente (acima de 25°C): Camiseta, Chapéu -->
+
+    <input type="number" id="temperatura">
+    <button onclick="recomendarRoupa()">Recomendar</button>
 </body>
 </html>

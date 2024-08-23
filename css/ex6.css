@@ -1,0 +1,81 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #000000 0%, #464d70 100%);
+    background-image: url(https://img.freepik.com/fotos-premium/tela-de-cinema-em-branco_1048-15981.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.title h1{
+    text-align: center;
+    color: aliceblue;
+    filter: drop-shadow(0 0 15px #757575) 
+    drop-shadow(0 0 20px #a1ac88)
+    drop-shadow(0 0 30px #ffffff);
+}
+
+h1{
+    font: 50pt normal arial;
+}
+
+.label{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 20pt bolder arial;
+    padding: 10% 30%;
+    justify-content: space-around;
+
+}
+
+
+label{
+    font-family: Helvetica;
+    filter: drop-shadow(0 0 15px #757575) 
+    drop-shadow(0 0 20px #a1ac88)
+    drop-shadow(0 0 30px #ffffff);
+    font: 30pt normal arial;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#idade{
+    width: 150px;
+    height: 50px;
+    font-size: 20pt;
+    border-radius: 20px;
+    text-align: center;
+    background-color:rgb(22, 25, 36);
+    color: #ffffff;
+    
+}
+
+button{
+    width: 150px;
+    height: 50px;
+    font-size: 20pt;
+    background-color: rgb(22, 25, 36);
+    color: #ffffff;
+    border-radius: 20pt;
+    
+}
+
+button :hover{
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    transition: 1s ease-in;
+}
+
+p{
+    text-align: center;
+    filter: drop-shadow(0 0 15px #757575) 
+    drop-shadow(0 0 20px #a1ac88)
+    drop-shadow(0 0 30px #ffffff);
+    color: whitesmoke;
+    font: 25pt normal arial;
+}

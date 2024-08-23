@@ -1,110 +1,118 @@
-body{
-    margin: 0;
+body {
+    font-family: Arial;
     padding: 0;
+    margin: 0;
 }
-
 header{
     text-align: center;
-    padding: 0;
-    color: white;
-    background: rgb(255,181,0);
-    background: linear-gradient(0deg, rgba(255,181,0,1) 0%, rgba(207,147,0,1) 75%, rgba(0,0,0,1) 100%); 
 }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 10px;
+    padding-top:2% ;
+    margin: 3px;
+  }
+  
+  .box {
+    background-color: #20262e;
+    color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 14px;
+    height: 100px;
+  }
 
-a{
-    color: white;
-}
-/* 
-h1{
-    background-color: orange;
-    border: 1px solid red;
-} */
 
-h2{
-    margin-top: 50%;
-    background-color: rgb(17, 17, 17);
-    font-size: 18px;
-}
-/* 
-h3{
-    background-color: black;
-    border: 1px solid red;
-} */
-
-.container{
+.box{
     display: flex;
-    text-align: center;
-    justify-content: space-evenly;
+    padding: 10px;
+    box-shadow: #20262e;
+    
 }
 
-/* .cartao{
-    border: 1px solid red;
-} */
-
-/* .cartao_texto{
-    border: 1px solid black;
-    background-color: burlywood;
-} */
-
-.botao_redirecionador{  
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    margin: 3%;
+.box a{
+    text-decoration: none;
+    color: white;
+    padding-left: 1%;
 }
 
-#adivinhacao{
-    background-image: url(../imagens/21125-forca-jogo-de-palavras-para-as-criancas-3468244872.jpg);
-    background-size: 300px 310px;
+.container div :hover{
+  cursor: pointer;
+  color: rgb(255, 197, 109);
+}
+/* 
+Brilho daora: */
+a :hover{
+  filter: drop-shadow(0 0 15px rgba(255, 23, 23, 0.6)) 
+          drop-shadow(0 0 30px rgba(255, 208, 0, 0.6)) 
+          drop-shadow(0 0 45px rgba(109, 139, 0, 0.6));
 }
 
-#bissexto{
-    background-image: url(../imagens/pngtree-calendar-and-clock-icon-png-image_8309253-3458236125.png);
-    background-size: 300px 300px;
+/* 
+decorando footer */
+
+footer {
+  background-color: #20262e;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+  /* position: fixed;
+  bottom: 0; */
+  width: 100%;
+  /* position: absolute;
+  bottom: 0; */
+
 }
 
-#media{
-    background-image: url(../imagens/sua-escola-e-uma-empresa-3480221289.jpg);
-    background-size: 300px 300px;
+.github-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-#gorjeta{
-    background-image: url(../imagens/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill-1896071869.jpg);
-    background-size: 300px 300px;
+.footer-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
-#saudacao{
-    background-image: url(../imagens/saudacao_1-3195952736.jpg);
-    background-size: 300px 300px;
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-#filmes{
-    background-image: url(../imagens/hqdefault-947882983.jpg);
-    background-size: 300px 300px;
+.footer-container p {
+  margin: 5px;
 }
 
-#frete{
-    background-image: url(../imagens/Frete-1024x390-4293681222.png);
-    background-size: 300px 300px;
+.footer-container a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-#jogos{
-    background-image: url(../imagens/a745e581-7955-4049-84fc-36dd7e3904f7-1015571073.jpg);
-    background-size: 300px 300px;
+.footer-container a:hover {
+  color: rgb(255, 197, 109);
+  font-size: x-large;
+  transition: 0.5s ease-in;
+}
+/* 
+o transition é aquilo que faz umas espécide de animação, só não sei como faz ele reverso... */
+
+.footer-info{
+  padding-top: 1%;
+}
+.footer-info p {
+  margin: 5px 0;
 }
 
-#senha{
-    background-image: url(../imagens/dica-senha-889683996.jpg);
-    background-size: 300px 300px;
-}
-
-#roupas{
-    background-image: url(../imagens/how-to-organize-your-closet-2648411-HERO-01.1-bd2dd22bb1934f798dc92202ed35dd92-201223902.jpg);
-    background-size: 300px 300px;
-}
-
-#conversor{
-    background-image: url(../imagens/Money_Banknotes_Dollars_472979_2560x1440-4114813708.jpg);
-    background-size: 300px 300px;
+@media (max-width: 600px) {
+  .footer-container {
+      flex-direction: column;
+  }
 }

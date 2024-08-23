@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body{
+    display: flex;
+
+    justify-content: center;
+}
+
+header{
+    margin-bottom: 10em;
+}
+
+.quadrado1{
+    position: relative;
+    bottom: 38em;
+    left: 6.65em;
+    width: 11em;
+    height: 10em;
+    background-color: #E1E2E6;
+    display: flex;
+    justify-content: center;
+}
+
+.quadrado1 input{
+    margin-left: 14px
+}
+
+.quadrado2{
+    position: relative;
+    bottom: 48em;
+    left: 21.71em;
+    width: 11em;
+    height: 10em;
+    background-color: #E1E2E6;
+    display: flex;
+    justify-content: center;
+}
+
+.quadrado2 input{
+    margin-left: 18px;
+}
+
+.quadrado3{
+    position: relative;
+    bottom: 40.81em;
+    left: 6.55em;
+    width: 11em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    background-color: #E1E2E6;
+}
+
+.quadrado3 input{
+    margin-left: 18px;
+}
+
+.quadrado4{
+    position: relative;
+    bottom: 50.81em;
+    left: 21.71em;
+    width: 11em;
+    height: 10em;
+    background-color: #E1E2E6;
+    display: flex;
+    justify-content: center;
+}
+
+.quadrado4 input{
+    margin-left: 17px;
+}
+
+.enter{
+    position: relative;
+    bottom: 62.84em;
+    left: 35.842em;
+    width: 11em;
+    height: 13em;
+    background-color: transparent;
+    border: 1.1em solid transparent;
+}
+
+.enter button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+.resultado{
+    position: relative;
+    bottom: 109.6em;
+    left: 35.6em;
+    width: 11em;
+    height: 10em;
+    background-color: #433647;
+}
+
+input{
+    text-align: center;
+    width: 1.3em;
+    font-size: 8em;
+    background-color: transparent;
+    border: 0;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.ARR{
+    position: relative;
+    bottom: 120em;
+    left: 8.3em;
+    width: 38em;
+    height: 10em;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ARR p{
+    color: #E1E2E6;
+    font-size: 3em;
+    font-family: "Pixelify Sans", sans-serif;
+}

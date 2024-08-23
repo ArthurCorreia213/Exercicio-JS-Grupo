@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function palindromoTeste(){
+            const palavra = document.getElementById("palavra").value
+            let contrario = ""
+
+            for(let i = palavra.length - 1; i>= 0; i--){
+                contrario += palavra[i]
+            }
+
+            if(palavra.length < 3){
+                document.getElementById("p").textContent = "Escreva uma palavra com pelo menos 3 letras"
+            }
+            else if(palavra == contrario){
+                document.getElementById("p").textContent = "Sua palavra é um palindromo!"
+                document.getElementById("p1").textContent =`Sua palavra escrita normalmente:  ${palavra}`
+                document.getElementById("p2").textContent = `Sua palavra escrita ao contrário:  ${contrario}`
+            }
+            else{
+                document.getElementById("p").textContent ="Sua palavra não é um palíndromo"
+                document.getElementById("p1").textContent =`Sua palavra escrita normalmente:  ${palavra}`
+                document.getElementById("p2").textContent = `Sua palavra escrita ao contrário:  ${contrario}`
+            }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="palavra">
+    <button onclick="palindromoTeste()">Testar</button>
+
+    <p id="p"></p>
+    <p id="p1"></p>
+    <p id="p2"></p>
+</body>
+</html>

@@ -6,19 +6,36 @@
     <title>Document</title>
 
     <script>
-        num = 0
-        do{
-            let num = parseInt(prompt("Digite um número para ver se ele é par ou impar: "))
-            if(num % 2 == 0){
-                document.write(`O número ${num} é par`)
+        function calcularNivel() {
+            let pontuacao = parseInt(document.getElementById("pontuacao").value);
+            let nivel;
+
+            switch (true) {
+                case (pontuacao >= 0 && pontuacao <= 199):
+                    nivel = "Iniciante";
+                    break;
+                case (pontuacao >= 200 && pontuacao <= 499):
+                    nivel = "Intermediário";
+                    break;
+                case (pontuacao >= 500 && pontuacao <= 999):
+                    nivel = "Avançado";
+                    break;
+                case (pontuacao >= 1000):
+                    nivel = "Mestre";
+                    break;
+                default:
+                    nivel = "Pontuação inválida";
             }
-            else{
-                document.write(`O número ${num} é impar`)
-            }
-        }while(num != 0)
+
+            document.getElementById("resultado").innerText = "Nível: " + nivel;
+        }
     </script>
 </head>
+
 <body>
-    
+    <input type="number" id="pontuacao" name="pontuacao">
+    <button onclick="calcularNivel()">Calcular Nível</button>
+
+    <p id="resultado"></p>
 </body>
 </html>

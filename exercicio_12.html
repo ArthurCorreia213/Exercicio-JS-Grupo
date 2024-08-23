@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // let num = parseInt(prompt("Digite um número para ver sua tabuada: "))
+        // let fator = parseInt(prompt("Até qual fator você gostaria de ver o seu número ser multiplicado?: "))
+
+        // for(let i=1; i <= fator; i++){
+        //     document.write(`${num} x ${i} = ${num*i}`)
+        // }
+
+        function tabuada(){
+
+
+        const num = document.getElementById("num").value
+        const fator = document.getElementById("fator").value
+
+
+        for(let i=1; i <= fator; i++){
+            document.write(`${num} x ${i} = ${num*i} `+"<br>")
+            // alert(`${num} x ${i} = ${num*i}`)
+            // document.getElementById('p').innerText = `${num} x ${i} = ${num*i} `+"<br>"
+        }
+
+            // let num = parseInt(document.getElementById('num'))
+            // let fator = parseInt(document.getElementById('fator'))
+
+            // for(const i=1; i <= fator; i++){
+            //     j = num*i
+            //     k = num, " + ", fator, " = ", j
+
+            //     alert(k)
+            //     // document.getElementById("p").textContent += num ," x ", i ," = ", num*i, "%0D%0A"    `${num} x ${i} = ${num*i} %0D%0A`;
+            //     // document.write(`${num} x ${i} = ${num*i}`)
+            // }
+    }
+
+    </script>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Digite um número para ver sua tabuada">
+    <input type="number" id="fator" placeholder="Digite até que número gostaria de ver seu número ser multiplicado">
+    <button id="btn" onclick="tabuada()">Calcular</button>
+    <p id="p"></p>
+</body>
+</html>

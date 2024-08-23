@@ -1,30 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script>
-        for(let i= 1; i<=5 ;i++){
-            let nome_mais_velho
-            let idade_mais_velho = 0 
-
-            let nome = prompt("Digite um nome: ")
-            let idade = parseInt(prompt("Digite sua idade: "))
-    
-            if(idade > idade_mais_velho){
-                idade_mais_velho = idade
-                nome_mais_velho = nome
-            }
-
-            if(i==5){
-                document.write(`A pessoa mais velha é ${nome_mais_velho}, com ${idade_mais_velho} anos de idade`)
-            }
-        }
-    </script>
+    <title>Calculadora de frete</title>
+    <link rel="stylesheet" href="css/ex7.css">
 </head>
+
+<script>
+
+    function calcularfrete(){
+
+        const peso = parseInt(document.getElementById('peso').value);
+
+        const regiao = document.getElementById('regiao').value;
+
+        let frete;
+
+        switch (true){
+
+            //casos pro norte
+            case (peso <= 5 && regiao == "N"):
+
+                frete = "05,00R$ para a região Norte.";
+
+            break;
+
+            case (peso > 5 && regiao == "N"):
+
+                frete = "25,00R$ para a região Norte.";
+
+            break;
+
+            //casos pro sul
+            case (peso <= 5 && regiao == "S"):
+
+                frete = "10,00R$ para a região Sul.";
+
+            break;
+            case (peso > 5 && regiao == "S"):
+
+                frete = "20,00R$ para a região Sul.";
+
+            break;
+            //casos do oeste
+            case (peso <= 5 && regiao == "C"):
+
+                frete = "12,00R$ para a região Centro-Oeste.";
+
+            break;
+            case (peso > 5 && regiao == "C"):
+
+                frete = "22,00R$ para a região Centro-Oeste.";
+
+            break;
+            default:
+                frete = "(INSIRA A REGIÃO CORRETAMENTE)"
+            
+            
+        }
+
+        document.getElementById("resultado").innerText = "o frete é " + frete;
+    
+
+
+    }
+
+</script>
+
 <body>
+
+    <header>
+
+    </header>
+
+    <main>
+        <section>
+
+            <div class="titulo">
+
+                <h1>Calculadora de frete</h1>
+
+            </div>
+
+            <div class="inputpeso">
+                <p>Qual é o peso de seu pacote em quilos?</p>
+                <input type="number" name="peso" id="peso"></imput>
+                ideia, fazer um caminhão, uma espécie de carreta e peso
+            </div>
+
+            <div class="inputregiao">
+                <p>Para qual região seu pacote irá?(N para norte, S para sul, e C para centro-oeste)</p>
+
+                <input type="text" id="regiao"></input>
+            </div>
+
+            <div class="botao">
+
+                <button type="button" onclick="calcularfrete()">Calcular Frete</button>
+
+            </div>
+
+            <div class="resultado">
+                    <p id="resultado"></p>
+                </div>
+                
+
+        </section>
+    </main>
+
     
 </body>
 </html>

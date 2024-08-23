@@ -6,16 +6,62 @@
     <title>Document</title>
 
     <script>
-        for(let i = 1; i <= 10; i++){
-            const random_number = Math.floor((Math.random() * 100) + 1)
-            numeros.push(random_number)
-        }
+        function validarSenha(){
+            let senha = String(document.getElementById("senha").value)
+            let tamanho, maiuscula, numero, charEspecial
 
-        document.write(numeros)
-        document.write(numeros.reduce((a, c) => a + c, 0) / numeros.length)
+            switch (true){
+                case (senha.length < 8):
+                    tamanho = "Senha muito curta. Sua senha deve possuir 8 a 16 caracteres"
+                    break
+                case (senha.length >= 8 && senha.length <= 16):
+                    tamanho = "Tamanho aprovado"
+                    break
+                case (senha.length > 16):
+                    tamanho = "Senha muito longa. Sua senha deve possuir 8 a 16 caracteres"
+                    break
+                default:
+                    tamanho = "Senha inválida"
+            }
+
+            switch (true){
+                case (/[A-Z]/.test(senha)):
+                    maiuscula = "Quantidade de maisculas aprovada"
+                    break
+                default:
+                    maiuscula = "Senha inválida. Sua senha deve possui ao menos uma letra maiuscula"
+            }
+
+            switch (true){
+                case (/\d/.test(senha)):
+                    numero = "Quantidade de números aprovada"
+                    break
+                default:
+                    numero = "Senha inválida. Sua senha deve possui ao menos um número"
+            }
+
+            switch (true){
+                case (/[!@#$%^&*(),.?":{}|<>]/.test(senha)):
+                    charEspecial = "Quantidade de caracteres especiais aprovada"
+                    break
+                default:
+                    charEspecial = "Senha inválida. Sua senha deve possui ao menos um caractere especial"
+            }
+
+            document.getElementById("resultado1").innerText = tamanho;
+            document.getElementById("resultado2").innerText = maiuscula;
+            document.getElementById("resultado3").innerText = numero;
+            document.getElementById("resultado3").innerText = charEspecial;
+        }
     </script>
 </head>
+
 <body>
-    
+    <input type="text" id="senha">
+    <button onclick="validarSenha()">Validar</button> 
+    <p id="resultado"></p>
+    <p id="resultado1"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
 </body>
 </html>

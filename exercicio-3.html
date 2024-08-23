@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Média Escolar</title>
+    <link rel="stylesheet" href="css/ex3.css">
+
     <script>
     function media_final() {
         const nota1 = parseInt(document.getElementById('nota1').value)
@@ -13,27 +15,61 @@
 
         const media = (nota1 + nota2 + nota3 + nota4) / 4
 
-        if(media >= 7)
-            document.write("Aprovado!")
+        if (nota1 > 10 || nota2 > 10 || nota3 > 10 || nota4 > 10)
+        document.getElementById('resultado').innerHTML = "Nota(s) inexistente(s)"  
+
+        else if(media >= 7 && media <= 10)
+            document.getElementById('resultado').innerHTML = `Sua média foi "${media}". Parabéns, você foi aprovado!`
 
         else if(media >= 5 && media < 7)
-            document.write("Recuperação")
+            document.getElementById('resultado').innerHTML = `Sua média foi "${media}". Quase! Você está de recuperação.`
         
         else
-            document.write("Reprovado.")
+            document.getElementById('resultado').innerHTML = `Sua média foi "${media}". Tente novamente no ano que vem, você foi reprovado.`
+
+
     }
     </script>
 </head>
 <body>
-    <header>
-        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
-        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
-    </header>
-    <H1>Nota Final</H1>
-    <input type="number" id="nota1" placeholder="Digite uma nota">
-    <input type="number" id="nota2" placeholder="Digite uma nota">
-    <input type="number" id="nota3" placeholder="Digite uma nota">
-    <input type="number" id="nota4" placeholder="Digite uma nota">
-    <button onclick="media_final()">Calcular</button>
+    <div class="container">
+        <header>
+            <h1>Atividade JavaScript: Navegação e Exercícios</h1>
+            <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
+        </header>
+
+        <div class="titulo">
+            <H1>Nota Final</H1>
+        </div>
+
+        <div class="calculadora">
+            <img src="imagens/calculadora.jpg" alt="calculadora.jpg">
+            <div class="quadrado1">
+                <input type="number" id="nota1" placeholder="">
+            </div>
+            <div class="quadrado2">
+                <input type="number" id="nota2" placeholder="">
+            </div>
+            <div class="quadrado3">
+                <input type="number" id="nota3" placeholder="">
+            </div>
+            <div class="quadrado4">
+                <input type="number" id="nota4" placeholder="">
+            </div>
+            <div class="enter">
+                <button onclick="media_final()"></button>
+            </div>
+            <div class="resultado"></div>
+            <div class="nota1">
+                <p>Nota</p>
+            </div>
+            .Nota
+        </div>
+
+        <div class="ARR">
+            <p id="resultado"></p>
+        </div>
+
+    </div>
 </body>
 </html>
