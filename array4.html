@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar um Novo Array com Valores Dobrados</title>
+
+    <script>
+
+//tentativa testando com prompt:
+
+let array1 = prompt("Digite os valores do primeiro vetor separados por vírgula (irei mostrar os valores multiplicados por 2) (exemplo:1,2,3 -> 2,4,6):")
+
+let arrayoriginal = array1.split(",").map(Number)
+
+        // function dobrarValores(arrayoriginal) {
+            let novoVetor = arrayoriginal.map(function(elemento){
+                return elemento*2
+            })
+            document.write("O vetor original era: " + arrayoriginal + "<br>")
+            document.write("O novo vetor é " + novoVetor)
+        // }
+
+     
+
+
+// original:
+
+        // let numeros = [1, 2, 3, 4, 5, 6 , 21, 76]
+        
+        // function dobrarValores(numeros) {
+        //     let novoVetor = numeros.map(function(elemento){
+        //         return elemento*2
+        //     })
+        //     document.write(novoVetor)
+        // }
+
+        // dobrarValores(numeros)
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

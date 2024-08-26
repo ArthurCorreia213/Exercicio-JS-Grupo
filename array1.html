@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar Todos os Números em um Array</title>
+
+    <script>
+    let numeros = []
+    document.write("Os números gerados foram: ")
+    for(let i = 1; i <= 10; i++){
+        const random_number = Math.floor((Math.random() * 100) + 1)
+        numeros.push(random_number)
+        document.write(random_number, "  |  ")
+    }
+
+    document.write("<br>"+"A soma desses números é: " + numeros.reduce((a, c) => a + c, 0))
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

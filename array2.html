@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar o Menor Número em um Array</title>
+    <script>
+
+
+
+let user = prompt("digite os números separados por vírgula: (ex:1,2,3)")
+
+let number = user.split(",").map(Number) //ele transformas os valores em numeros, não em springs
+
+let menorn = number[0]
+
+for (let i = 1; i < number.length; i++) {
+    if (number[i] < menorn) {
+        menorn = number[i];
+    }
+}
+
+document.write("Os números escolhidos foram: " + number + "<br>")
+document.write("E o menor número entre eles é: " + menorn)
+
+
+        // let numeros = [11, 27, 32, 49, 50]
+        // let menor_numero = numeros[0]
+
+        // for(let i= 0; i <= numeros.length-1 ;i++){
+        //     // document.write(numeros[i])
+        //     if(numeros[i] < menor_numero){
+        //         menor_numero = numeros[i]
+        //     }
+        // }
+        // document.write(menor_numero)
+
+            // if(i==5){
+            //     document.write(`A pessoa mais velha é ${nome_mais_velho}, com ${idade_mais_velho} anos de idade`)
+            // }
+
+    // }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
