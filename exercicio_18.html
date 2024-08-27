@@ -1,15 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
 
     <script>
+        let listaCompleta = []
+        
+        function salvar(){
+            let item = [[]]
+            let nome = document.getElementById("nome").value
+            let quantidade = document.getElementById("quantidade").value
+            let valor = document.getElementById("valor").value
+            item.push(nome, quantidade, valor)
+            listaCompleta.push(item)
+        }
+
+        function exibir(){
+            for(let i = 0; i<=listaCompleta.length -1; i++){
+                document.getElementById('nome_tabela').innerHTML = `${listaCompleta[i][1]}`+"<br>"
+            }
+            for(let i = 0; i<=listaCompleta.length -1; i++){
+                document.getElementById('quantidade_tabela').innerHTML = `${listaCompleta[i][2]}`+"<br>"
+            }
+            for(let i = 0; i<=listaCompleta.length -1; i++){
+                document.getElementById('valor_tabela').innerHTML = `${listaCompleta[i][3]}`+"<br>"
+            }
+
+            //teste tabela:
+            // document.getElementsByClassName('tabela').innerHTML += `${listaCompleta}`+"<br>"+`${listaTamanho}`
+            // document.getElementById('produto').innerHTML += `${nome}`
+        }
         
     </script>
+
 </head>
+
 <body>
+    <header>
+
+    </header>
+    <section>
+        <div class="titulo">
+            <h1> Gerenciamento de Estoque </h1>
+        </div>
+        <article>
+            <div class="nome">
+                <p>Digite o nome do produto: </p>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
+                </input>  
+            </div>
+
+            <div class="quantidade">
+                <p>Digite a quantidade do produto</p>
+                <input type="number" name="quantidade" id="quantidade" placeholder="Digite a quantidade do produto">
+                </input>
+            </div>
+
+            <div class="valor">
+                <p>Qual foi o valor do produto?</p>
+                <input type="number" name="valor" id="valor" placeholder="Digite o valor do produto">
+            </div>
+
+            <div class="salvar">
+                <button onclick="salvar()">Salvar</button>
+            </div>
+
+            <div class="exibir">
+                <button onclick="exibir()">Exibir produtos cadastrados</button>
+            </div>
+            <p id="p"></p>
+            <table>
+                
+            </article>
+        </article>
+    </section>
+
+    <br><br><br>
+    <p id="p"></p>
+    <div id="teste" style="display: flex;">
+        <div id="nome_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
+        <div id="quantidade_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
+        <div id="valor_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
+    </div>
     
+    <!-- (teste tabela:) -->
+     <!-- <table>
+        <tr>
+            <td>Produto</td>
+            <td>Quantidade</td>
+            <td>Valor</td>
+            <td>Ações</td>
+        </tr>
+        <tr>
+            <td class="tabela 1" id="produto"></td>
+            <td class="tabela 2" id="quantidade"></td>
+            <td class="tabela 3" id="valor"></td>
+            <td class="tabela 4" id="acoes"></td>
+        </tr>
+     </table> -->
 </body>
 </html>

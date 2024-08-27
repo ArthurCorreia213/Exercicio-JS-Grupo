@@ -1,21 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forca</title>
 
     <script>
-        let meuArray = [] 
+        // function forca(){
+            let palavra = prompt("Digite a palavra secreta: ")
+            let palavra_array = palavra.split("")
+            let array_limpo = []
+            let segredo_array = []
+            let letras_tentadas = ""
+            let letras_erradas = ""
+            let vidas = 5
 
+            for(i = 0; i <= palavra_array.length -1; i++){
+                if(palavra_array[i] == " "){
+                    segredo_array.push(" ")
+                }
+                else if(palavra_array[i] == "-"){
+                    segredo_array.push("-")
+                }
+                else{
+                    segredo_array.push("_")
+                }
+            }
 
-        function palabra_forca(){
-        }
+            for(i = 0; i <= palavra_array.length -1; i++){
+                if(
+                    ["á", "ã", "â"].includes(palavra_array[i])){
+                    array_limpo.push("a")
+                }
+                else if(["é", "ê"].includes(palavra_array[i])){
+                    array_limpo.push("e")
+                }
+                else if(["í"].includes(palavra_array[i])){
+                    array_limpo.push("i")
+                }
+                else if(["ó", "ô"].includes(palavra_array[i])){
+                    array_limpo.push("o")
+                }
+                else if(["ú"].includes(palavra_array[i])){
+                    array_limpo.push("u")
+                }
+                else{
+                    array_limpo.push(palavra_array[i].toLowerCase())
+                }
+            }
+
+            while(vidas!=0){
+                let chute = prompt(`${segredo_array.join("")}\nLetras testadas: ${letras_tentadas}\nLetras erradas: ${letras_erradas}\nTentativas restantes: ${vidas}\n\nDigite uma letra`)
+                letras_tentadas +=chute
+
+                if(array_limpo.includes(chute)){
+                    for(i = 0; i <= segredo_array.length ;i++){
+                        if(array_limpo[i] == chute){
+                            segredo_array[i] = palavra_array[i]
+                        }
+                    }
+                }
+                else{
+                    letras_erradas+=chute
+                    vidas--
+                }
+
+                if(segredo_array.join("") == palavra){
+                    alert(`Você ganhou!\nA palavra secreta era ${palavra}`)
+                    vidas = 0
+                }
+            }
     </script>
 </head>
 <body>
-    <h1>Forca</h1>
-    <button onclick="adicionarItem()">Adicionar</button>
-    <p id="listaItens"></p>
+    <!-- <header>
+
+    </header>
+
+    <section>
+        <main></main>
+    </body> -->
 </body>
 </html>

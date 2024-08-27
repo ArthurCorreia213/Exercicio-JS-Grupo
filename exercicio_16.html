@@ -8,19 +8,38 @@
     <script>
         function palindromoTeste(){
             const palavra = document.getElementById("palavra").value
+            let palavra_normal = ""
             let contrario = ""
 
             for(let i = palavra.length - 1; i>= 0; i--){
-                contrario += palavra[i]
+                if(palavra[i] == " "){
+                    contrario += ""
+                }
+                else{
+                    contrario += palavra[i]
+                }
             }
+
+            for(i = 0; i <= palavra.length; i++){
+                if(palavra[i] == " "){
+                    palavra_normal=palavra_normal
+                }
+                else if(palavra[i] == undefined){
+                    break
+                }
+                else{
+                    palavra_normal +=palavra[i]
+                }
+            }
+            alert(`Palavra normal: ${palavra_normal}\nPalavra contrario: ${contrario}`)
 
             if(palavra.length < 3){
                 document.getElementById("p").textContent = "Escreva uma palavra com pelo menos 3 letras"
             }
-            else if(palavra == contrario){
+            else if(palavra_normal == contrario){
                 document.getElementById("p").textContent = "Sua palavra é um palindromo!"
                 document.getElementById("p1").textContent =`Sua palavra escrita normalmente:  ${palavra}`
-                document.getElementById("p2").textContent = `Sua palavra escrita ao contrário:  ${contrario}`
+                document.getElementById("p2").textContent = `Sua palavra escrita ao contrário:  ${palavra}`
             }
             else{
                 document.getElementById("p").textContent ="Sua palavra não é um palíndromo"
