@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ex18.css">
     <title>Mercado</title>
 
     <script>
@@ -15,23 +16,63 @@
             let valor = document.getElementById("valor").value
             item.push(nome, quantidade, valor)
             listaCompleta.push(item)
+
+            
         }
 
         function exibir(){
+            document.getElementById('nome_tabela').innerHTML = ""
+            document.getElementById('quantidade_tabela').innerHTML = ""
+            document.getElementById('valor_tabela').innerHTML = ""
+            document.getElementById('acoes_tabela').innerHTML = ""
+
             for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('nome_tabela').innerHTML = `${listaCompleta[i][1]}`+"<br>"
+                document.getElementById('nome_tabela').innerHTML += `${listaCompleta[i][1]}`+"<hr>"
             }
             for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('quantidade_tabela').innerHTML = `${listaCompleta[i][2]}`+"<br>"
+                document.getElementById('quantidade_tabela').innerHTML += `${listaCompleta[i][2]}`+"<hr>"
             }
             for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('valor_tabela').innerHTML = `${listaCompleta[i][3]}`+"<br>"
+                document.getElementById('valor_tabela').innerHTML += ` R$ ${listaCompleta[i][3]}`+"<hr>"
             }
 
+            //config: botão para deletar
+            for(let i = 0; i<=listaCompleta.length -1; i++){
+                document.getElementById('acoes_tabela').innerHTML += `${listaCompleta[i][4]}`+`<button id='remove' onclick='remover()'>Remover</button> <hr>`
+            }
             //teste tabela:
             // document.getElementsByClassName('tabela').innerHTML += `${listaCompleta}`+"<br>"+`${listaTamanho}`
             // document.getElementById('produto').innerHTML += `${nome}`
         }
+
+
+            //minha idéia: tentar fazer uma forma de que "se a posição do botão for tal (tipo, no [0]) remover [0] e exibir, e fazer isso várias vezes"
+
+        // function remover() {
+        //     let teste = listaCompleta.splice(
+        //         listaCompleta.length[4]
+        //         if(listaCompleta.length == [1]){
+        //             listaCompleta.pop([1])
+
+        //         }
+
+
+        //         exibir()
+        //         }
+                
+        //     ;
+
+            
+        
+
+        //testando o métpdo splice acima
+
+        function remover() {
+            let teste = listaCompleta.pop();
+            exibir() 
+        }
+
+        //botao "funcionou", mas ta tipo, tem que clicar em salvar, depois em exibir, aparece os produtos, mas fica bugado pois tem que clicar no botão e logo após tem que clicar em exibir, que some os dados, mas o botao fica ainda
         
     </script>
 
@@ -63,12 +104,14 @@
                 <input type="number" name="valor" id="valor" placeholder="Digite o valor do produto">
             </div>
 
-            <div class="salvar">
-                <button onclick="salvar()">Salvar</button>
-            </div>
+            <div class="botoes">
+                <div class="salvar">
+                    <button onclick="salvar()">Salvar</button>
+                </div>
 
-            <div class="exibir">
-                <button onclick="exibir()">Exibir produtos cadastrados</button>
+                <div class="exibir">
+                    <button onclick="exibir()">Exibir produtos cadastrados</button>
+                </div>
             </div>
             <p id="p"></p>
             <table>
@@ -79,12 +122,29 @@
 
     <br><br><br>
     <p id="p"></p>
-    <div id="teste" style="display: flex;">
-        <div id="nome_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
-        <div id="quantidade_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
-        <div id="valor_tabela" style="width: 100px; height: 500px; border: 1px solid red;"></div>
+    <div class="nomes" style="display: flex; border: 2px solid red;">
+        <div><p>Nome do produto</p></div>
+        <div><p>Quantidade</p></div>
+        <div><p>Valor</p></div>
+        <div><p>Ações</p></div>
     </div>
-    
+    <div class="tabela-pai">
+        
+        <div class="tabela-titulos">
+            <div class="nomes"><p>Nome do produto</p></div>
+            <div class="nomes"><p>Quantidade</p></div>
+            <div class="nomes"><p>Valor</p></div>
+            <div class="nomes"><p>Ações</p></div>
+        </div>
+            <div class= "tabela" id="teste">
+                <div id="nome_tabela"></div>
+                <div id="quantidade_tabela"></div>
+                <div id="valor_tabela"></div>
+                <div id="acoes_tabela">
+                    <!-- <button onclick="remover()">Remover</button> -->
+                </div>
+            </div>
+    </div>
     <!-- (teste tabela:) -->
      <!-- <table>
         <tr>

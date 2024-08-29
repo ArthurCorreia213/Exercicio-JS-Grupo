@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Calculadora de Nível</title>
+    <link rel="stylesheet" href="css/ex8.css">
     <script>
         function calcularNivel() {
             let pontuacao = parseInt(document.getElementById("pontuacao").value);
@@ -33,9 +33,16 @@
 </head>
 
 <body>
-    <input type="number" id="pontuacao" name="pontuacao">
-    <button onclick="calcularNivel()">Calcular Nível</button>
+    <div class="container">
+        <div class="t">
+            <h1>Insira sua pontuação</h1>
+        </div>
+        <div class="b">
+            <input type="number" id="pontuacao" name="pontuacao">
+            <button onclick="calcularNivel()">Calcular Nível</button>
+        </div>
 
-    <p id="resultado"></p>
+        <p id="resultado"></p>
+    </div>
 </body>
 </html>

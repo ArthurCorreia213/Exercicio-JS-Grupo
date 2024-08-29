@@ -11,15 +11,25 @@ header{
     margin-bottom: 10em;
 }
 
+.titulo{
+   display: flex;
+   justify-content: center; 
+}
+
+.titulo h1{
+    font-size: 5em;
+}
+
 .quadrado1{
     position: relative;
     bottom: 38em;
-    left: 6.65em;
+    left: 6.62em;
     width: 11em;
     height: 10em;
     background-color: #E1E2E6;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .quadrado1 input{
@@ -35,6 +45,7 @@ header{
     background-color: #E1E2E6;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .quadrado2 input{
@@ -50,6 +61,7 @@ header{
     display: flex;
     justify-content: center;
     background-color: #E1E2E6;
+    z-index: 1;
 }
 
 .quadrado3 input{
@@ -58,13 +70,14 @@ header{
 
 .quadrado4{
     position: relative;
-    bottom: 50.81em;
+    bottom: 50.83em;
     left: 21.71em;
     width: 11em;
     height: 10em;
     background-color: #E1E2E6;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .quadrado4 input{
@@ -109,7 +122,7 @@ input{
 
 .ARR{
     position: relative;
-    bottom: 120em;
+    bottom: 139em;
     left: 8.3em;
     width: 38em;
     height: 10em;
@@ -124,4 +137,40 @@ input{
     color: #E1E2E6;
     font-size: 3em;
     font-family: "Pixelify Sans", sans-serif;
+}
+
+.nota1{
+    position: relative;
+    bottom: 54.51em;
+    left: 5em;
+    color: white;
+    font-size: 2em;
+    z-index: 2;
+}
+
+.nota2{
+    position: relative;
+    bottom: 56.65em;
+    left: 12.7em;
+    color: white;
+    font-size: 2em;
+    z-index: 2;
+}
+
+.nota3{
+    position: relative;
+    bottom: 50.2em;
+    left: 5em;
+    color: white;
+    font-size: 2em;
+    z-index: 2;
+}
+
+.nota4{
+    position: relative;
+    bottom: 52.35em;
+    left: 12.7em;
+    color: white;
+    font-size: 2em;
+    z-index: 2;
 }

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ex17.css">
     <title>Forca</title>
 
     <script>
         // function forca(){
             let palavra = prompt("Digite a palavra secreta: ")
+
             let palavra_array = palavra.split("")
             let array_limpo = []
             let segredo_array = []
@@ -26,10 +28,8 @@
                     segredo_array.push("_")
                 }
             }
-
             for(i = 0; i <= palavra_array.length -1; i++){
-                if(
-                    ["á", "ã", "â"].includes(palavra_array[i])){
+                if(["á", "ã", "â"].includes(palavra_array[i])){
                     array_limpo.push("a")
                 }
                 else if(["é", "ê"].includes(palavra_array[i])){
@@ -48,37 +48,114 @@
                     array_limpo.push(palavra_array[i].toLowerCase())
                 }
             }
+            function chute(letra){
+                if(vidas!=0){
+                    letras_tentadas += letra
 
-            while(vidas!=0){
-                let chute = prompt(`${segredo_array.join("")}\nLetras testadas: ${letras_tentadas}\nLetras erradas: ${letras_erradas}\nTentativas restantes: ${vidas}\n\nDigite uma letra`)
-                letras_tentadas +=chute
-
-                if(array_limpo.includes(chute)){
-                    for(i = 0; i <= segredo_array.length ;i++){
-                        if(array_limpo[i] == chute){
-                            segredo_array[i] = palavra_array[i]
+                    if(array_limpo.includes(letra)){
+                        for(i = 0; i <= segredo_array.length ;i++){
+                            if(array_limpo[i] == letra){
+                                segredo_array[i] = palavra_array[i]
+                            }
                         }
                     }
-                }
-                else{
-                    letras_erradas+=chute
-                    vidas--
-                }
+                    else{
+                        letras_erradas+=letra
+                        vidas--
+                        document.getElementById('imagem').style.background = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/head.svg)"
 
-                if(segredo_array.join("") == palavra){
-                    alert(`Você ganhou!\nA palavra secreta era ${palavra}`)
-                    vidas = 0
+                            
+                        }
+                        // switch{
+                        // case 5:
+                        // document.get
+                    }
+
+                    document.getElementById('palavraSecreta').innerHTML = `${segredo_array.join("")}`
+                    document.getElementById('letrasTentadas').innerHTML = `Letras já tentadas: ${letras_tentadas}`
+                    document.getElementById('letrasErradas').innerHTML = `Letras erradas: ${letras_erradas}`
+                    document.getElementById('vidas').innerHTML = `Vidas: ${vidas}`
+
+                    if(segredo_array.join("") == palavra){
+                        alert(`Você ganhou!\nA palavra secreta era ${palavra}`)
+                        vidas = 0
+                    }
                 }
             }
+
+         
+        // window.onload = forca();
     </script>
 </head>
 <body>
-    <!-- <header>
+    <header>
 
     </header>
 
-    <section>
-        <main></main>
-    </body> -->
+    <div class="container">
+
+        <div class="img" id="imagem">
+        </div>
+
+        <p id="palavraSecreta"></p>
+        <p id="letrasTentadas">Letras tentadas: </p>
+        <p id="letrasErradas">Letras erradas: </p>
+        <p id="vidas"></p>
+        
+        <!-- <div class="ps" id="palavra-secreta">
+            <div class="letras">T</div>
+            <div class="letras">E</div>
+            <div class="letras">S</div>
+            <div class="letras">T</div>
+            <div class="letras">E</div>
+        </div> -->
+
+        <div class="ts" id="teclado">
+            <div class="teclas">
+                <button class="botao" id="t-a" onclick="chute('a')" onclick="teste()">A</button>
+                <button class="botao" onclick="chute('b')">B</button>
+                <button class="botao" onclick="chute('c')">C</button>
+                <button class="botao" onclick="chute('d')">D</button>
+                <button class="botao" onclick="chute('e')">E</button>
+                <button class="botao" onclick="chute('f')">F</button>
+                <button class="botao" onclick="chute('g')">G</button>
+                <button class="botao" onclick="chute('h')">H</button>
+                <button class="botao" onclick="chute('i')">I</button>
+            </div>
+            <div class="teclas">
+                <button class="botao" onclick="chute('j')">J</button>
+                <button class="botao" onclick="chute('k')">K</button>
+                <button class="botao" onclick="chute('l')">L</button>
+                <button class="botao" onclick="chute('m')">M</button>
+                <button class="botao" onclick="chute('n')">N</button>
+                <button class="botao" onclick="chute('o')">O</button>
+                <button class="botao" onclick="chute('p')">P</button>
+                <button class="botao" onclick="chute('q')">Q</button>
+                <button class="botao" onclick="chute('r')">R</button>
+            </div>
+            <div class="teclas">
+                <button class="botao" onclick="chute('s')">S</button>
+                <button class="botao" onclick="chute('t')">T</button>
+                <button class="botao" onclick="chute('u')">U</button>
+                <button class="botao" onclick="chute('v')">V</button>
+                <button class="botao" onclick="chute('w')">W</button>
+                <button class="botao" onclick="chute('x')">X</button>
+                <button class="botao" onclick="chute('y')">Y</button>
+                <button class="botao" onclick="chute('z')">Z</button>    
+                <button id="botao-restart">🎮</button>
+            </div>
+        </div>
+<!-- 
+        <div class="vidas" id="lifes">
+            <div class="vida" id="vida-1"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
+            <div class="vida" id="vida-2"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
+            <div class="vida" id="vida-3"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
+            <div class="vida" id="vida-4"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
+            <div class="vida" id="vida-5"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
+        </div> -->
+
+
+    </div>
+    </body>
 </body>
 </html>
