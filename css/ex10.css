@@ -1,0 +1,71 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #444444;
+}
+
+.imagem{
+    background-image: url("/Exercicio-JS-Grupo/imagens/image 2.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+
+}
+
+.imagem input{
+    position: fixed;
+    top: 79%;;
+    width: 70px;
+    height: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: #BF424E;
+    border: none;
+    font-size: 25pt;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+button{
+    margin: 10%;
+    width: 100px;
+    height: 50px;
+    background-color: #BF424E;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    border-radius: 20px;
+
+}
+
+button:hover{
+    transform: scale(1.5);
+    transition: ease-in 0.1s;
+    cursor: pointer;
+    background-color: #c29fa2;
+
+}
+p{
+    position: absolute;
+    top: 70%;
+    background-color: #bf424f5b;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: arial;
+    font-weight: 900;
+    font-size: 25pt;
+    color: rgb(0, 0, 0);
+}

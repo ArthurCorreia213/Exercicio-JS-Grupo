@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recomendação de roupas</title>
+    <link rel="stylesheet" href="css/ex10.css">
 
     <script>
         function recomendarRoupa(){
@@ -27,7 +28,7 @@
                     recomendacao = "Temperatura inválida"
             }
 
-            document.write(recomendacao)
+            document.getElementById("resposta").innerText = recomendacao;
         }
     </script>
 </head>
@@ -36,8 +37,12 @@
     Frio (abaixo de 15°C): Casaco, Luvas
     Ameno (15°C a 25°C): Jaqueta, Cachecol
     Quente (acima de 25°C): Camiseta, Chapéu -->
+  <div class="container">
 
-    <input type="number" id="temperatura">
+    <div class="imagem"><input type="number" id="temperatura"></div>
     <button onclick="recomendarRoupa()">Recomendar</button>
+    <p id="resposta"></p>
+  </div>
+
 </body>
 </html>

@@ -21,25 +21,39 @@
         //     }
         // }
 
+        let nome_mais_velho
+        let idade_mais_velho = 0 
+        let idades = [] ; let nomes = []
+        let i = 0
+
         function maisVelho(){
-            let nome_mais_velho
-            let idade_mais_velho = 0 
 
-            const nome1 = document.getElementById("nome1")
-            const idade1 = parseInt(getElementById("idade1"))
+            const nome1 = document.getElementById("nome1").value
+            const idade1 = parseInt(document.getElementById("idade1").value)
 
-            const nome2 = document.getElementById("nome2")
-            const idade2 = parseInt(getElementById("idade2"))
+            const nome2 = document.getElementById("nome2").value
+            const idade2 = parseInt(document.getElementById("idade2").value)
 
-            const nome3 = document.getElementById("nome3")
-            const idade3 = parseInt(getElementById("idade3"))
+            const nome3 = document.getElementById("nome3").value
+            const idade3 = parseInt(document.getElementById("idade3").value)
 
-            const nome4 = document.getElementById("nome4")
-            const idade4 = parseInt(getElementById("idade4"))
+            const nome4 = document.getElementById("nome4").value
+            const idade4 = parseInt(document.getElementById("idade4").value)
 
-            const nome5 = document.getElementById("nome5")
-            const idade5 = parseInt(getElementById("idade5"))
-            }
+            const nome5 = document.getElementById("nome5").value
+            const idade5 = parseInt(document.getElementById("idade5").value)
+
+            idades.push(idade1, idade2, idade3, idade4, idade5)
+            nomes.push(nome1, nome2, nome3, nome4, nome5)
+
+            idades.forEach(idade => {
+                if(idade > idade_mais_velho){
+                    idade_mais_velho = idade; nome_mais_velho = nomes[i]
+                }
+                i++}
+            )
+            document.getElementById("p").innerText = `A pessoa mais velha do grupo é ${nome_mais_velho} com ${idade_mais_velho} anos`
+        }
     </script>
 </head>
 <body>
@@ -59,5 +73,6 @@
     <input type="number" placeholder="Idade" id="idade5" style="width: 50px;">
     <br>
     <button onclick="maisVelho()">Verificar</button>
+    <p id="p"></p>
 </body>
 </html>
