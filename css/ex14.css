@@ -1,0 +1,83 @@
+.imagem{
+    display: flex;
+    height: 35vh;
+    justify-content: end;
+    align-items: end;
+}
+
+img{
+    width: 25em;
+    margin-right: 20em;
+}
+
+.pensamento img{
+    bottom: 1em;
+    width: 35em;
+    position: relative;
+    left: 50em;
+}
+
+.texto{
+    position: relative;
+    top: 17.9em;
+    left: 55em;
+    z-index: 1;
+}
+
+.texto label{
+    font-size: 2.5em;
+}
+
+.texto input{
+    font-size: 2.5em;
+    width: 1.2em;
+    padding-left: 0.4em;
+    text-align: center;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background-color: transparent;
+}
+
+.texto > .t1{
+    margin-left: 2.8em;
+}
+
+.texto > .t2{
+    margin-left: 1.3em;
+}
+
+button{
+    display: flex;
+    position: relative;
+    left: 10em;
+    bottom: 2em;
+}
+
+button > p{
+    font-size: 3em;
+}
+
+.vermelho{
+    color: red;
+    animation: preto infinite;
+}
+
+.azul{
+    color: blue;
+    animation: preto infinite;
+}
+
+.verde{
+    color: green;
+    animation: preto infinite;
+}
+
+.amarelo{
+    color: yellow;
+    animation: preto infinite;
+}
+
+@keyframes preto{
+    color: #000;
+}

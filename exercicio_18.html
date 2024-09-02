@@ -4,73 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ex18.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Mercado</title>
 
     <script>
         let listaCompleta = []
         
         function salvar(){
-            let item = [[]]
-            let nome = document.getElementById("nome").value
-            let quantidade = document.getElementById("quantidade").value
-            let valor = document.getElementById("valor").value
-            item.push(nome, quantidade, valor)
-            listaCompleta.push(item)
+            // let item = [[]]
+            // let nome = document.getElementById("nome").value
+            // let quantidade = document.getElementById("quantidade").value
+            // let valor = document.getElementById("valor").value
+            // item.push(nome, quantidade, valor)
+            // listaCompleta.push(item)
+
+                let nome = document.getElementById("nome").value;
+                let quantidade = document.getElementById("quantidade").value;
+                let valor = document.getElementById("valor").value;
+                listaCompleta.push([nome, quantidade, valor]); // Atualiza a exibição após salvar
 
             
         }
 
         function exibir(){
-            document.getElementById('nome_tabela').innerHTML = ""
-            document.getElementById('quantidade_tabela').innerHTML = ""
-            document.getElementById('valor_tabela').innerHTML = ""
-            document.getElementById('acoes_tabela').innerHTML = ""
+            // document.getElementById('nome_tabela').innerHTML = ""
+            // document.getElementById('quantidade_tabela').innerHTML = ""
+            // document.getElementById('valor_tabela').innerHTML = ""
+            // document.getElementById('acoes_tabela').innerHTML = ""
 
-            for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('nome_tabela').innerHTML += `${listaCompleta[i][1]}`+"<hr>"
-            }
-            for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('quantidade_tabela').innerHTML += `${listaCompleta[i][2]}`+"<hr>"
-            }
-            for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('valor_tabela').innerHTML += ` R$ ${listaCompleta[i][3]}`+"<hr>"
-            }
+            // for(let i = 0; i<=listaCompleta.length -1; i++){
+            //     document.getElementById('nome_tabela').innerHTML += `${listaCompleta[i][1]}`+"<hr>"
+            // }
+            // for(let i = 0; i<=listaCompleta.length -1; i++){
+            //     document.getElementById('quantidade_tabela').innerHTML += `${listaCompleta[i][2]}`+"<hr>"
+            // }
+            // for(let i = 0; i<=listaCompleta.length -1; i++){
+            //     document.getElementById('valor_tabela').innerHTML += ` R$ ${listaCompleta[i][3]}`+"<hr>"
+            // }
 
-            //config: botão para deletar
-            for(let i = 0; i<=listaCompleta.length -1; i++){
-                document.getElementById('acoes_tabela').innerHTML += `${listaCompleta[i][4]}`+`<button id='remove' onclick='remover()'>Remover</button> <hr>`
-            }
-            //teste tabela:
-            // document.getElementsByClassName('tabela').innerHTML += `${listaCompleta}`+"<br>"+`${listaTamanho}`
-            // document.getElementById('produto').innerHTML += `${nome}`
-        }
+            // //config: botão para deletar
+            // for(let i = 0; i<=listaCompleta.length -1; i++){
+            //     document.getElementById('acoes_tabela').innerHTML += `${listaCompleta[i][4]}`+`<button id='remove' onclick='remover()'>Remover</button> <hr>`
+            // }
 
+            document.getElementById('nome_tabela').innerHTML = "";
+    document.getElementById('quantidade_tabela').innerHTML = "";
+    document.getElementById('valor_tabela').innerHTML = "";
+    document.getElementById('acoes_tabela').innerHTML = "";
 
-            //minha idéia: tentar fazer uma forma de que "se a posição do botão for tal (tipo, no [0]) remover [0] e exibir, e fazer isso várias vezes"
+    listaCompleta.forEach((item, index) => {
+        document.getElementById('nome_tabela').innerHTML += `${item[0]}<br>`;
+        document.getElementById('quantidade_tabela').innerHTML += `${item[1]}<br>`;
+        document.getElementById('valor_tabela').innerHTML += ` R$ ${item[2]}<br>`;
+        document.getElementById('acoes_tabela').innerHTML += 
+            `<button id='b-r' onclick='remover(${index})'>Deletar</button><br>`;
+    });
 
-        // function remover() {
-        //     let teste = listaCompleta.splice(
-        //         listaCompleta.length[4]
-        //         if(listaCompleta.length == [1]){
-        //             listaCompleta.pop([1])
+    document.querySelector('.tabela-pai').style.display = 'block';
+    // `<button id='b-r' onclick='remover(${index})'><img src="imagens/delete.svg" style="width: 15px;" alt="delete"></button><br>`;
 
-        //         }
-
-
-        //         exibir()
-        //         }
-                
-        //     ;
 
             
+
+        }
+
+
         
 
-        //testando o métpdo splice acima
+        // function remover() {
+        //     let teste = listaCompleta.pop();
+        //     exibir() 
+        // }
 
-        function remover() {
-            let teste = listaCompleta.pop();
-            exibir() 
-        }
+        function remover(index) {
+    listaCompleta.splice(index, 1); // Remove o item no índice especificado
+    exibir(); // Atualiza a exibição após remover
+}
 
         //botao "funcionou", mas ta tipo, tem que clicar em salvar, depois em exibir, aparece os produtos, mas fica bugado pois tem que clicar no botão e logo após tem que clicar em exibir, que some os dados, mas o botao fica ainda
         
@@ -122,12 +136,6 @@
 
     <br><br><br>
     <p id="p"></p>
-    <div class="nomes" style="display: flex; border: 2px solid red;">
-        <div><p>Nome do produto</p></div>
-        <div><p>Quantidade</p></div>
-        <div><p>Valor</p></div>
-        <div><p>Ações</p></div>
-    </div>
     <div class="tabela-pai">
         
         <div class="tabela-titulos">

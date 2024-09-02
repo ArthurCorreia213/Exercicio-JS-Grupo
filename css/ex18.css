@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: azure;
+    background-color: #e6eed7;
 
 
 }
@@ -19,19 +19,28 @@ section{
     position: relative;
     margin: 0 20% 0 20%;
     align-items: center;
-    background-color: rgba(139, 233, 252, 0.204);
+    background-color: #1f6764;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #e7c049;
+    
 }
 
 input{
     width: 70%;
     border: none;
     height: 20px;
-    background-color: rgba(172, 255, 255, 0.822);
+    background-color: #e7c049;
 }
 
 input:hover{
     transition: ease-in-out 100ms;
     background-color: #29a6f325;
+}
+
+article{
+    padding-top: 2%;
 }
 .botoes{
     display: flex;
@@ -44,14 +53,32 @@ input:hover{
 }
 
 button{
-    background-color: #29a5f3;
+    
+    background-color: #1f6764;
+    color: #e7c049;
     height: 50px;
     width: 200px;
     border: none;
     border-radius: 50px;
-    color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#b-r{
+    background-image: url('imagens/coracao.svg');
+    height: 10px;
+    width: 10px;
+    background-color: #92b35a;
+    border: none;
+    border-radius: 50px;
+    color: #c94d65;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    background-color: none;
+    border: none;
 }
 
 #remove{
@@ -61,8 +88,8 @@ button{
 
 button:hover{
     transition: 0.1s ease-in;
-    background-color: #6bd2f9;
-    color: #29a5f3;
+    background-color: #92b35a;
+    color: aliceblue;
     cursor: pointer;
 }
 /* 
@@ -97,3 +124,36 @@ configurando a tabela: */
     height: 20%;
 }
 
+.titulo{
+    background-image: url('https://lorensonline.com.br/wp-content/uploads/2019/06/Lorens-Crescimento-do-Hortifruti-no-Brasil-legumes-sortidos-1080x675.jpg');
+    filter: brightness(
+74%
+);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0.1px;
+    font-size: 20pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e7c049;
+}
+
+.titulo h1{
+    filter: none;
+    background-color: #1f676385;
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #faf3de;
+}
+
+.tabela-pai{
+    background-color: #92b35a;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tabela-pai {
+    display: none; /* Esconde a tabela inicialmente */
+}
