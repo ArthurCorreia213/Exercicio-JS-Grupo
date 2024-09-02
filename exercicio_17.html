@@ -5,178 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ex17.css">
     <title>Forca</title>
-
     <script>
-        let palavra = prompt("Digite a palavra secreta: ")
-        // function forca(){
-            let palavra_array = palavra.split("")
-            let array_limpo = []
-            let segredo_array = []
-            let letras_tentadas = ""
-            let letras_erradas = ""
-            let vidas = 5
+        let palavra = prompt("Digite a palavra secreta: ").toLowerCase();
+        let palavra_array = palavra.split("");
+        let array_limpo = [];
+        let segredo_array = [];
+        let letras_tentadas = "";
+        let letras_erradas = "";
+        let vidas = 6;
 
-            // alterando imagem:
+        function atualizarPalavraSecreta() {
+            const palavraSecretaDiv = document.getElementById('palavra-secreta');
+            palavraSecretaDiv.innerHTML = ''; 
 
-            //mudar a cor:
-            document.addEventListener('DOMContentLoaded', () => {
+            segredo_array.forEach(letra => {
+                const letraDiv = document.createElement('div');
+                letraDiv.className = 'letras';
+                letraDiv.textContent = letra;
+                palavraSecretaDiv.appendChild(letraDiv);
+            });
+        }
+
+        function chute(letra) {
+            if (vidas > 0) {
+                letras_tentadas += letra;
+                if (array_limpo.includes(letra)) {
+                    for (let i = 0; i < segredo_array.length; i++) {
+                        if (array_limpo[i] === letra) {
+                            segredo_array[i] = palavra_array[i];
+                        }
+                    }
+                } else {
+                    letras_erradas += letra;
+                    vidas--;
+                    atualizarImagem(vidas);
+                }
+                atualizarPalavraSecreta();
+                document.getElementById('letrasTentadas').innerHTML = `Letras já tentadas: ${letras_tentadas}`;
+                document.getElementById('letrasErradas').innerHTML = `Letras erradas: ${letras_erradas}`;
+                document.getElementById('vidas').innerHTML = `Vidas: ${vidas}`;
+                
+                if (segredo_array.join("") === palavra) {
+                    alert(`Você ganhou!\nA palavra secreta era ${palavra}`);;
+                }
+
+                if (vidas === 0) {
+                alert(`Você perdeu!\nA palavra secreta era ${palavra}`);
+            }
+            }
+        }
+
+//ALGO QUE PODERIA NOS LIVRAR DE MUITA DOR DE CABEÇA ANTES: no menu esquerdo, clicar com o botão direito do mouse na "imagem" e colar onde deverá aparecer a imagem, nos livra de confusão!
+
+function atualizarImagem(vidas) {
+    let imagemUrl;
+    switch (vidas) {
+        case 6:
+            imagemUrl = "url('forca-svg/vazio.svg')";
+            break;
+        case 5:
+            imagemUrl = "url('forca-svg/head.svg')";
+            break;
+        case 4:
+            imagemUrl = "url('forca-svg/corpo.svg')";
+            break;
+        case 3:
+            imagemUrl = "url('forca-svg/mao direita.svg')";
+            break;
+        case 2:
+            imagemUrl = "url('forca-svg/mao esquerda.svg')";
+            break;
+        case 1:
+            imagemUrl = "url('forca-svg/pe direito.svg')";
+            break;
+        case 0:
+            imagemUrl = "url('forca-svg/pe esquerdo.svg')"; 
+            break;
+    }
+    document.getElementById('imagem').style.backgroundImage = imagemUrl;
+}
+
+        document.addEventListener('DOMContentLoaded', () => {
             const botoes = document.querySelectorAll('.botao');
 
             botoes.forEach(botao => {
                 botao.addEventListener('click', () => {
-                    // Adiciona a classe 'clicked' ao botão clicado
                     botao.classList.add('clicked');
-
-                    // Se você quiser garantir que um botão só possa ser clicado uma vez e mudar de cor,
-                    // você pode remover o event listener depois do primeiro clique
-                    botao.removeEventListener('click', arguments.callee);
                 });
             });
+
+            for (let i = 0; i < palavra_array.length; i++) {
+                if (palavra_array[i] === " ") {
+                    segredo_array.push("-");
+                } else if (palavra_array[i] === "-") {
+                    segredo_array.push("-");
+                } else {
+                    segredo_array.push("");
+                }
+            }
+
+            for (let i = 0; i < palavra_array.length; i++) {
+                let char = palavra_array[i];
+                if (["á", "ã", "â"].includes(char)) {
+                    array_limpo.push("a");
+                } else if (["é", "ê"].includes(char)) {
+                    array_limpo.push("e");
+                } else if (["í"].includes(char)) {
+                    array_limpo.push("i");
+                } else if (["ó", "ô"].includes(char)) {
+                    array_limpo.push("o");
+                } else if (["ú"].includes(char)) {
+                    array_limpo.push("u");
+                } else {
+                    array_limpo.push(char.toLowerCase());
+                }
+            }
+
+            atualizarPalavraSecreta();
+            atualizarImagem(vidas);
         });
 
-
-            for(i = 0; i < palavra_array.length; i++){
-                if(palavra_array[i] == " "){
-                    segredo_array.push(" ")
-                }
-                else if(palavra_array[i] == "-"){
-                    segredo_array.push("-")
-                }
-                else{
-                    segredo_array.push("_")
-                }
-            }
-
-            for(i = 0; i <= palavra_array.length -1; i++){
-                if(["á", "ã", "â"].includes(palavra_array[i])){
-                    array_limpo.push("a")
-                }
-                else if(["é", "ê"].includes(palavra_array[i])){
-                    array_limpo.push("e")
-                }
-                else if(["í"].includes(palavra_array[i])){
-                    array_limpo.push("i")
-                }
-                else if(["ó", "ô"].includes(palavra_array[i])){
-                    array_limpo.push("o")
-                }
-                else if(["ú"].includes(palavra_array[i])){
-                    array_limpo.push("u")
-                }
-                else{
-                    array_limpo.push(palavra_array[i].toLowerCase())
-                }
-            }
-
-            function chute(letra){
-                if(vidas!=0){
-                    letras_tentadas += letra
-                    if(array_limpo.includes(letra)){
-                        for(i = 0; i <= segredo_array.length ;i++){
-                            if(array_limpo[i] == letra){
-                                segredo_array[i] = palavra_array[i]
-                            }
-                        }
-
-                    }
-                    else{
-                        letras_erradas+=letra
-                        vidas-- 
-                        atualizarImagem(vidas);
-                    }
-
-                }
-
-                function atualizarImagem(vidas) {
-    let imagemUrl;
-    switch (vidas) {
-        case 5:
-            imagemUrl = "/caminho/para/forca-svg/vazio.svg";
-            break;
-        case 4:
-            imagemUrl = "/caminho/para/forca-svg/cabeca.svg";
-            break;
-        case 3:
-            imagemUrl = "/caminho/para/forca-svg/mao-direita.svg";
-            break;
-        case 2:
-            imagemUrl = "/caminho/para/forca-svg/mao-esquerda.svg";
-            break;
-        case 1:
-            imagemUrl = "/caminho/para/forca-svg/pe-esquerdo.svg";
-            break;
-        case 0:
-            imagemUrl = "/caminho/para/forca-svg/pe-direito.svg";
-            break;
-        default:
-            imagemUrl = "/caminho/para/forca-svg/vazio.svg";
-    }
-    document.getElementById('imagem').style.backgroundImage = `url('${imagemUrl}')`;
-}
-
-                document.getElementById('palavraSecreta').innerHTML = `${segredo_array.join("")}`
-                document.getElementById('letrasTentadas').innerHTML = `Letras já tentadas: ${letras_tentadas}`
-                document.getElementById('letrasErradas').innerHTML = `Letras erradas: ${letras_erradas}`
-                document.getElementById('vidas').innerHTML = `Vidas: ${vidas}`
-                
-                // if(segredo_array.join("") == palavra){
-                //     alert(`Você ganhou!\nA palavra secreta era ${palavra}`)
-                //     vidas = 0
-                // }
-                
-                // if (vidas === 5){
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/vazio.svg)"
-                // }
-                // else if (vidas === 4){
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/cabeca.svg)"
-                // }
-                // else if (vidas === 3){
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/mao direita.svg)"
-                // }
-                // else if (vidas === 2){
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/mao esquerda.svg)"
-                // }
-                // else if (vidas === 1){
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/pe esquerdo.svg)"
-                // }
-                // else{
-                //     document.getElementById('imagem').style.backgroundImage = "url(/Exercicio-JS-Grupo/img-forca/forca-svg/pe direito.svg)"
-                // }
-            }
-            
-            // testando atualidar vidas/img
-            
-        // window.onload = forca();
-
-        //botao para reiniciar:
-        function recarregarAPagina(){
+        function recarregarAPagina() {
             window.location.reload();
-} 
-
+        }
     </script>
 </head>
-<body> <!--<body onload="forca()">!-->
-    <header>
-
-    </header>
-
+<body>
+    <header></header>
     <div class="container">
-
-        <div class="img" id="imagem">
-        </div>
-
+        <div class="img" id="imagem"></div>
         <p id="palavraSecreta"></p>
         <p id="letrasTentadas">Letras tentadas: </p>
         <p id="letrasErradas">Letras erradas: </p>
         <p id="vidas"></p>
         
-        <!-- <div class="ps" id="palavra-secreta">
-            <div class="letras">T</div>
-            <div class="letras">E</div>
-            <div class="letras">S</div>
-            <div class="letras">T</div>
-            <div class="letras">E</div>
-        </div> -->
+        <div class="ps" id="palavra-secreta">
+        </div>
 
         <div class="ts" id="teclado">
             <div class="teclas">
@@ -213,17 +177,6 @@
                 <button id="botao-restart" onclick="recarregarAPagina()">🔃</button>
             </div>
         </div>
-<!-- 
-        <div class="vidas" id="lifes">
-            <div class="vida" id="vida-1"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
-            <div class="vida" id="vida-2"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
-            <div class="vida" id="vida-3"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
-            <div class="vida" id="vida-4"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
-            <div class="vida" id="vida-5"><img src="imagens/coracao.svg" style="width: 30px;" alt=""></div>
-        </div> -->
-
-
     </div>
-    </body>
 </body>
 </html>

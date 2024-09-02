@@ -63,6 +63,17 @@ body{
 .botao.clicked {
     background-color: #fa9f28; /* Altere a cor conforme desejado */
     color: rgb(0, 0, 0); /* Cor do texto, se necessário */
+    cursor: not-allowed;
+
+}
+
+.botao.clicked:hover {
+    background-color: #fa9f28; /* Altere a cor conforme desejado */
+    color: rgb(0, 0, 0); /* Cor do texto, se necessário */
+    transition: 0.1s ease-in;
+    transform: scale(1.0);
+    cursor: not-allowed;
+
 }
 
 

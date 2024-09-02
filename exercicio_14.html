@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/ex14.css">
 
     <script>
         function parOuImpar(){
@@ -21,8 +22,26 @@
     </script>
 </head>
 <body>
-    <input type="number" id="num" placeholder="Digite um número para ver sua tabuada">
-    <button id="btn" onclick="parOuImpar()">Calcular</button>
+    
+    <div class="texto">
+        <label class="t1" for="num">Será que </label>
+        <br>
+        <label class="t2" for="num">o número "</label>
+        <input type="number" id="num" placeholder="">
+        <label class="t3" for="num">"</label>
+        <br>
+        <label class="t4" for="num"> é par ou</label>
+        <label class="t5" for="num">é ímpar?</label>
+    </div>
+    <br>
+    <div class="pensamento">
+        <img src="imagens/pensamento 1.svg" alt="">
+    </div>
+    <div class="imagem">
+        <img src="imagens/pessoa_pensante3 1.svg" alt="">
+    </div>
+    <button id="btn" onclick="parOuImpar()"><p class="verde">D</p><p class="azul">E</p><p class="amarelo">S</p>
+    <p class="vermelho">C</p><p class="verde">U</p><p class="azul">B</p><p class="amarelo">R</p><p class="vermelho">A</p></button>
     <p id="p"></p>
 </body>
 </html>
