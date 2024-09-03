@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Palindromo</title>
     <link rel="stylesheet" href="css/ex16.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 
     <script>
         function palindromoTeste(){
@@ -54,11 +57,16 @@
     </script>
 </head>
 <body>
-    <input type="text" id="palavra">
-    <button onclick="palindromoTeste()">Testar</button>
+    <div class="container">
+        <div class="container2">
+            <div>É UM PALÍNDROMO?</div>
+        </div>
+        <input type="text" id="palavra">
+        <button onclick="palindromoTeste()">Testar</button>
 
-    <p id="p"></p>
-    <p id="p1"></p>
-    <p id="p2"></p>
+        <p id="p"></p>
+        <p id="p1"></p>
+        <p id="p2"></p>
+    </div>
 </body>
 </html>
