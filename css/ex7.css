@@ -4,6 +4,9 @@ body{
     background-image: url(https://mobilidade.estadao.com.br/wp-content/uploads/2021/10/BR-116-e-a-estrada-mais-perigosa-do-Brasil.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100%;
+    background-position: center center;
+    background-attachment: fixed;
 
 
 

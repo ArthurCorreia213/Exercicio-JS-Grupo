@@ -2,12 +2,24 @@ body{
     margin: 0;
     padding: 0;
     background-image: url(https://blog.ebaconline.com.br/blog/wp-content/uploads/2022/12/kcnb4lkkucfipej3ngqxm-scaled-e1674744655926.jpeg);
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(245, 224, 255);
+    min-height: 100%;
+    background-position: center center;
+    background-attachment: fixed;
 
 }
+
+/* INFORMAÇÃO IMPORTANTE: PARA FAZER A IMAGEM FICAR TOTALMENTE NO FUNCO E CERTIN, USA O SEGUINTE:
+background-image: url(IMAGEM);
+background-repeat:no-repeat;
+background-size: cover;
+min-height: 100%;
+background-position: center center;
+background-attachment: fixed; */
+
 
 .container{
     position: absolute;
