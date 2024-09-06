@@ -5,31 +5,53 @@
     align-items: end;
 }
 
+.imagem img{
+    position: absolute;
+    bottom: 4em;
+    right: 0em;
+}
+
 img{
     width: 25em;
-    margin-right: 20em;
+    margin-right: 10em;
 }
 
 .pensamento img{
-    bottom: 1em;
+    bottom: 27em;
     width: 35em;
-    position: relative;
+    position: absolute;
     left: 50em;
 }
 
+.pensamento .hover{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 27.5em;
+    left: 50em;
+    width: 6 0em;
+    height: 50em;
+}
+
 .texto{
-    position: relative;
-    top: 17.9em;
-    left: 55em;
+    display: flex;
+    position: absolute;
+    top: 30em;
+    left: 3em;
     z-index: 1;
+    transition: 0.5s;
 }
 
 .texto label{
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
 
 .texto input{
-    font-size: 2.5em;
+    position: relative;
+    position: relative;
+    top: 1.2em;
+    right: 8.95em;
+    font-size: 2.3em;
     width: 1.2em;
     padding-left: 0.4em;
     text-align: center;
@@ -37,6 +59,39 @@ img{
     border-right: 0;
     border-top: 0;
     background-color: transparent;
+}
+
+.t1{
+    width: 5em;
+    position: relative;
+    left: 1em;
+}
+
+.t2{
+    width: 6em;
+    position: relative;
+    top: 1.2em;
+    right: 7.5em;
+}
+
+.t3{
+    position: relative;
+    top: 1.2em;
+    right: 8.8em;
+}
+
+.t4{
+    width: 5em;
+    position: relative;
+    top: 2.5em;
+    right: 16em;
+}
+
+.t5{
+    width: 5em;
+    position: relative;
+    top: 2.5em;
+    right: 17.5em;
 }
 
 .texto > .t1{
@@ -49,35 +104,60 @@ img{
 
 button{
     display: flex;
-    position: relative;
-    left: 10em;
-    bottom: 2em;
+    position: absolute;
+    left: 11em;
+    bottom: 11.6em;
+    height: 3.5em;
+    align-items: center;
+    border-radius: 1em;
+    opacity: 0;
+    transition: 1s;
+    z-index: 3;
+    cursor: pointer;
 }
 
 button > p{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .vermelho{
-    color: red;
-    animation: preto infinite;
+    color: black;
+    animation: preto 5s infinite;
 }
 
 .azul{
-    color: blue;
-    animation: preto infinite;
+    color: black;
+    animation: preto 5s infinite;
 }
 
 .verde{
-    color: green;
-    animation: preto infinite;
+    color: black;
+    animation: preto 5s infinite;
 }
 
 .amarelo{
-    color: yellow;
-    animation: preto infinite;
+    color: black;
+    animation: preto 5s infinite;
+}
+
+.hover:hover > .texto{
+    position: absolute;
+    top: 28.8em;
+}
+
+.hover:hover > button{
+    opacity: 100;
+}
+
+p{
+    font-size: 5em;
 }
 
 @keyframes preto{
-    color: #000;
+    0%{color: #000;}
+    20%{color: red;}
+    40%{color: blue;}
+    60%{color: green;}
+    80%{color: yellow;}
+    100%{color: #000;}
 }

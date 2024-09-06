@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ex12.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>Tabuada</title>
+
+    <script>
+    //     function tabuada(){
+    //     const num = document.getElementById("num").value
+    //     const fator = document.getElementById("fator").value
+    //     document.getElementById("resultado").innerHTML = ""
+
+    //     let itemElement = document.createElement('div')
+        
+    //     for(let i=1; i <= fator; i++){
+    //         if(i % 10 == 0){
+    //             document.getElementById("resultado").appendChild(itemElement)
+    //             itemElement.innerHTML = (`${num} x ${i} = ${num*i} |` +"<br>")
+    //         }
+    //         else{
+    //             itemElement.innerHTML += (`${num} x ${i} = ${num*i} |` +"<br>")
+    //         }
+    //     }
+    //     document.getElementById("resultado").appendChild(itemElement)
+    // }
+                                                    //teste
+        // Função para criar uma nova div
+        function tabuada(){
+            document.getElementById("resultado").innerHTML = "" 
+            function createNewDiv() {
+                const newDiv = document.createElement('div');
+                newDiv.classList.add('number-container');
+                document.getElementById('resultado').appendChild(newDiv);
+                return newDiv;
+            }
+
+            const num = document.getElementById("num").value
+            const maxNumbers = document.getElementById("fator").value;  // Quantidade total de números
+            let currentDiv = createNewDiv();  // Cria a primeira div
+
+            for (let i = 1; i <= maxNumbers; i++) {
+                // Adiciona o número à div atual
+                currentDiv.innerHTML += `${num} x ${i} = ${num*i}` +"<br>";
+
+                // A cada 10 números, cria uma nova div
+                if (i % 10 === 0) {
+                    currentDiv = createNewDiv();
+                }
+            }
+    }
+    </script>
+
+</head>
+<body>
+    <main id="background">
+        <div id="container">
+            <h1>Tabuada</h1>
+            <input type="number" id="num" placeholder="Digite um número para ver sua tabuada">
+            <input type="number" id="fator" placeholder="Digite até que número gostaria de ver seu número ser multiplicado"><br>
+            <button id="btn" onclick="tabuada()">Calcular</button>
+            <div id="resultado""></div>
+        </div>
+    </main>
+</body>
+</html>
