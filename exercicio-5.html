@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Saudação de acordo com a hora</title>
+    <link rel="stylesheet" href="css/ex5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 
     <script>
-        //Lógica: Verifica a hora atual e exibe a saudação apropriada ("Bom dia!", "Boa tarde!" ou "Boa noite!").
-            const a = new Date().getHours()
-            
-            if(a >= 6 && a < 12){
-                alert("Bom dia")
-            }
+        // Lógica: Verifica a hora atual e exibe a saudação apropriada ("Bom dia!", "Boa tarde!" ou "Boa noite!").
+        window.onload = function() {
+            const a = new Date().getHours();
+            const body = document.body;
+            const sun = document.querySelector('.sun');
+            const moon = document.querySelector('.moon');
 
-            else if(a >= 12 && a < 18){
-                alert("Boa tarde")
+            if (a >= 6 && a < 12) {
+                alert("Bom dia");
+                document.getElementById("demo").innerHTML = "Bom dia 🌞";
+                body.style.background = "#e8cc9c";
+                sun.classList.add('show');
+                moon.classList.remove('show');
+
+            } else if (a >= 12 && a < 18) {
+                alert("Boa tarde");
+                body.style.background = "#9c667d";
+                document.getElementById("demo").innerHTML = "Boa tarde 🌄";
+                sun.classList.add('show');
+                moon.classList.remove('show');
+                
+
+
+            } else {
+                alert("Boa noite 🌙");
+                document.getElementById("demo").innerHTML = "Boa noite 🌙";
+                body.style.background = "#3b5274";
+                sun.classList.remove('show');
+                moon.classList.add('show');
             }
-            else{
-                alert("Boa noite")
-            }
-        
+        };
     </script>
 </head>
 <body>
-    <header>
-        <h1>Atividade JavaScript: Navegação e Exercícios</h1>
-        <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
-    </header>
-    <p id="demo"></p>
+
+        <div class="sun"></div>
+    <div class="moon"></div>
+    <h1 id="demo"></h1>
+
 </body>
 </html>
