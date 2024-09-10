@@ -18,14 +18,12 @@
             const moon = document.querySelector('.moon');
 
             if (a >= 6 && a < 12) {
-                alert("Bom dia");
                 document.getElementById("demo").innerHTML = "Bom dia 🌞";
                 body.style.background = "#e8cc9c";
                 sun.classList.add('show');
                 moon.classList.remove('show');
 
             } else if (a >= 12 && a < 18) {
-                alert("Boa tarde");
                 body.style.background = "#9c667d";
                 document.getElementById("demo").innerHTML = "Boa tarde 🌄";
                 sun.classList.add('show');
@@ -34,7 +32,6 @@
 
 
             } else {
-                alert("Boa noite 🌙");
                 document.getElementById("demo").innerHTML = "Boa noite 🌙";
                 body.style.background = "#3b5274";
                 sun.classList.remove('show');

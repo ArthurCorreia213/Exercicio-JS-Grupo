@@ -10,17 +10,49 @@
     <title>Tabuada</title>
 
     <script>
-        function tabuada(){
-        const num = document.getElementById("num").value
-        const fator = document.getElementById("fator").value
-        document.getElementById("resultado").innerHTML = ""
+    //     function tabuada(){
+    //     const num = document.getElementById("num").value
+    //     const fator = document.getElementById("fator").value
+    //     document.getElementById("resultado").innerHTML = ""
+
+    //     let itemElement = document.createElement('div')
         
-        for(let i=1; i <= fator; i++){
-            document.getElementById("resultado").innerHTML += (`${num} x ${i} = ${num*i} |`)
-        }
-        document.getElementById("resultado").appendChild(itemElement)
+    //     for(let i=1; i <= fator; i++){
+    //         if(i % 10 == 0){
+    //             document.getElementById("resultado").appendChild(itemElement)
+    //             itemElement.innerHTML = (`${num} x ${i} = ${num*i} |` +"<br>")
+    //         }
+    //         else{
+    //             itemElement.innerHTML += (`${num} x ${i} = ${num*i} |` +"<br>")
+    //         }
+    //     }
+    //     document.getElementById("resultado").appendChild(itemElement)
+    // }
+                                                    //teste
+        // Função para criar uma nova div
+        function tabuada(){
+            document.getElementById("resultado").innerHTML = "" 
+            function createNewDiv() {
+                const newDiv = document.createElement('div');
+                newDiv.classList.add('number-container');
+                document.getElementById('resultado').appendChild(newDiv);
+                return newDiv;
+            }
+
+            const num = document.getElementById("num").value
+            const maxNumbers = document.getElementById("fator").value;  // Quantidade total de números
+            let currentDiv = createNewDiv();  // Cria a primeira div
+
+            for (let i = 1; i <= maxNumbers; i++) {
+                // Adiciona o número à div atual
+                currentDiv.innerHTML += `${num} x ${i} = ${num*i}` +"<br>";
+
+                // A cada 10 números, cria uma nova div
+                if (i % 10 === 0) {
+                    currentDiv = createNewDiv();
+                }
+            }
     }
-    
     </script>
 
 </head>
