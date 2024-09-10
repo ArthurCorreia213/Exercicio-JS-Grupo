@@ -1,0 +1,45 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #4e6b66;
+}
+
+.container{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 10/4;
+    font-family: "Kanit", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    transition: ease-in-out 1s;
+    background-color: #ed834e;
+    padding: 10%;
+    border-radius: 20px;
+}
+
+input{
+    background-color: #ebcc6e;
+    border: #4e6b66 solid 1px;
+    border-radius: 2px;
+}
+
+button{
+    background-color: #4e6b66;
+    padding: 0%;
+    height: 2vh;
+    width: 10vh; 
+    border: none;
+    border-radius: 10px;
+    color: azure;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #ebe1c5;
+    transform: scale(1.1);
+    color: #4e6b66;
+    transition: 0.1s ease-in;
+}

@@ -93,13 +93,13 @@ footer {
 .footer-container a {
   text-decoration: none;
   color: #fff;
-  transition: color 0.3s ease;
+  transition: 0.2s ease-in;
 }
 
 .footer-container a:hover {
   color: rgb(255, 197, 109);
   font-size: x-large;
-  transition: 0.5s ease-in;
+  transition: 0.2s ease-in;
 }
 /* 
 o transition é aquilo que faz umas espécide de animação, só não sei como faz ele reverso... */

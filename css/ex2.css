@@ -1,4 +1,44 @@
 body{
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem img{
+    width: 40em;
+    height: 40em;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 24em;
+    left: 47.5em;
+
+
+& H1{
+    font-size: 3em;
+    }
+
+& input{
+    font-size: 3em;
+    width: 7em;
+    margin-bottom: 1.2em;
+    text-align: center;
+    padding-left: 0.5em;
+    }
+
+& p{
+    font-size: 2em;
+}
 }

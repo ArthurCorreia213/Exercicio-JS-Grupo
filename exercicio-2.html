@@ -11,10 +11,13 @@
             const ano_atual = parseInt(document.getElementById('ano_atual').value)
             
             if(ano_atual % 4 == 0)
-                document.write("O ano é bissexto!")
+                document.getElementById("resultado").innerHTML = "O ano é bissexto!"
+
+            else if(ano_atual % 4 > 0)
+                document.getElementById("resultado").innerHTML = "O ano não é bissexto."
 
             else
-                document.write("O ano não é bissexto.")
+                document.getElementById("resultado").innerHTML = "Digite um ano."
         }
     </script>
 </head>
@@ -23,9 +26,16 @@
         <h1>Atividade JavaScript: Navegação e Exercícios</h1>
         <H3>Por: Arthur Correia, Gabriel Morais e Mateus Abner</H2>
     </header>
-    <H1>O ano é bissexto???</H1>
 
-    <input type="number" id="ano_atual" placeholder="Digite um ano">
-    <button onclick="bissexto()">Verificar</button>
+    <div class="imagem">
+        <img src="imagens/calendario.svg" alt="">
+        <div class="texto">
+            <H1>O ano é bissexto???</H1>
+
+            <input type="number" id="ano_atual" placeholder="Digite um ano">
+            <button onclick="bissexto()">Verificar</button>
+            <p id="resultado"></p>
+        </div>
+    </div>
 </body>
 </html>

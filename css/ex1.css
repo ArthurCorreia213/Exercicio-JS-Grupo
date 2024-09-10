@@ -2,13 +2,9 @@ body{
     height: 95vh;
     background-color: rgb(123, 35, 206);
     color: #fff;
-}
-
-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container {
@@ -74,4 +70,16 @@ button{
     width: 8em;
     height: 2.3em;
     font-size: 1.4em;
+    background-color: #ff7d10;
+    border: none;
+    border-radius: 20px;
+    color: #fff7f0;
+    transition: 0.1s ease-in;
+}
+
+button:hover{
+    transition: 0.1s ease-in;
+    cursor: pointer;
+    background-color: #ffb238;
+    transform: scale(1.1);
 }
